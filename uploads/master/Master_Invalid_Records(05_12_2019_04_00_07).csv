@@ -1,0 +1,497 @@
+date,week,month,project group,project_name,shift,q#,customer,whse #,supervisor_name,work_type,product_category,size,temp_labor_hrs,gdb labor hrs,temp_labor_cost,gdb_labor_cost,total_labor_cost,units_g1,units_g5,units_q,units_p,units_other,total_units,total_gallons_done,cost_gallon,cost_unit,description_comments,chris lampe comment/notes,laurie's/intern's comments,Reason
+9/13/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,$464.00 ,$176 ,$640 ,,,,,,1117,1132.5,$0.76 ,$0.76 ,,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+9/16/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,S01365,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,$464.00 ,$176 ,$640 ,,,,,,204,444,$0.61 ,$0.61 ,Scraping the G5 pails and relabeling the G1 and G5 with DC ,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+9/17/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,S01520,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,$464.00 ,$176 ,$640 ,,,,,,751,1707,$0.76 ,$0.76 ,cut and comp the restricted brands ,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+9/18/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,S1630,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,$464.00 ,$176 ,$640 ,,,,,,132,144,$0.51 ,$0.51 ,Cut and comp the restricted brands ,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+9/19/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,S1496,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,16,$348.00 ,$176 ,$524 ,,,,,,2310,577.5,$0.62 ,$0.62 ," Involves taking out quarts from boxes, sticker, pallatize them and break down cardboard boxes. ",,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $524 
+"
+9/20/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,24,$232.00 ,$264 ,$496 ,,,,,,3168,,$0.59 ,$0.59 ,had only 2 people only the entire day. 2 left at lunch feeling sick but still we made 3168 units with the colors we had. 3 pallets  ,,,"gdb_labor_cost -> Values must be in decimal -> $264 
+total_labor_cost -> Values must be in decimal -> $496 
+"
+9/23/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,22,16,$312.00 ,$176 ,$488 ,,,,,,1056,,$0.36 ,$0.43 ,had teddy and linda hand relabel black aerosols ,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $488 
+"
+9/24/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,10,24,$138.00 ,$264 ,$402 ,,,,,,202,290,$0.35 ,$1.05 ,michael had to cut label. Linda and teddy had to relabel. William had to scrap all the 5 gallon buckets and relabel them. ,,,"gdb_labor_cost -> Values must be in decimal -> $264 
+total_labor_cost -> Values must be in decimal -> $402 
+"
+9/25/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,35,24,$500.00 ,$264 ,$764 ,,,,,,1152,,$0.37 ,$0.46 ,we trained robert langwith on sleeving today. He has to dump the rollers on table and sleeve it and put it in a box and palletize it ,,,"gdb_labor_cost -> Values must be in decimal -> $264 
+total_labor_cost -> Values must be in decimal -> $764 
+"
+9/26/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,$464.00 ,$176 ,$640 ,,,,,,344,86,$0.76 ,$0.76 ,had mike and william sort SPP quarts  ,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+9/27/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,S1496,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,$580.00 ,$176 ,$756 ,,,,,,3273,818.25,$0.60 ,$0.60 ,,,,"gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+9/30/2019,week3,SEPT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,32,$348.00 ,$352 ,$700 ,,,,,,914,1589.5,$0.48 ,$0.48 ," 1 gallon, 3 gallons, quarts, half pints, rollers of Rustoleum, Sherwin Williams and Valspar were sorted as part of the Rustoleum buy-back project ",,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $700 
+"
+10/1/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,S2761,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,32,$232.00 ,$352 ,$584 ,,,,,,4032,,$0.40 ,$0.40 ,,,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $584 
+"
+10/2/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,S01855,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,32,$464.00 ,$352 ,$816 ,,,,,,546,910,$0.49 ,$0.49 ,,,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $816 
+"
+10/3/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,36,32,$522.00 ,$352 ,$874 ,,,,,,15000,,$0.52 ,$0.52 ,,,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $874 
+"
+10/4/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,36,32,$522.00 ,$352 ,$874 ,,,,,,5400,,$0.52 ,$0.52 ,,,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $874 
+"
+10/7/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,S#2946,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,12,32,$174.00 ,$352 ,$526 ,,,,,,7200,,$0.36 ,$0.36 ,Separating the 12oz from 16oz; sorting the 12oz by colors and sticker the ollies sticker over the bar code and box them as raibow in a box.  ,,,"gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $526 
+"
+10/8/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,28,$464.00 ,$308 ,$772 ,,,,,,882,882,$0.53 ,$0.53 ,,,,"gdb_labor_cost -> Values must be in decimal -> $308 
+total_labor_cost -> Values must be in decimal -> $772 
+"
+10/9/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,28,$464.00 ,$308 ,$772 ,,,,,,1584,2232,$0.46 ,$0.46 ," 1 gallon, 3 gallons, quarts, half pints, rollers of Rustoleum, Sherwin Williams and Valspar were sorted as part of the Rustoleum buy-back project ",,,"gdb_labor_cost -> Values must be in decimal -> $308 
+total_labor_cost -> Values must be in decimal -> $772 
+"
+10/10/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,S2761,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,52,28,$754.00 ,$308 ," $1,062 ",,,,,,5328,,$0.42 ,$0.42 ,,,,"gdb_labor_cost -> Values must be in decimal -> $308 
+total_labor_cost -> Values must be in decimal ->  $1,062 
+"
+10/11/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,64,28,928,$308 ," $1,236 ",,,,,,,,$0.56 ,$0.86 ,,,,"temp_labor_cost -> Values must be in decimal -> 928
+gdb_labor_cost -> Values must be in decimal -> $308 
+total_labor_cost -> Values must be in decimal ->  $1,236 
+"
+10/14/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,32,696,$352 ," $1,048 ",,,,,,,,$0.61 ,$1.82 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal ->  $1,048 
+"
+10/14/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580 ,,,,,,,,$1.16 ,$1.90 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+total_labor_cost -> Values must be in decimal -> $580 
+"
+10/15/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,64,464,$704 ," $1,168 ",,,,,,,,$0.79 ,$0.79 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $704 
+total_labor_cost -> Values must be in decimal ->  $1,168 
+"
+10/15/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580 ,,,,,,,,$0.59 ,$0.65 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+total_labor_cost -> Values must be in decimal -> $580 
+"
+10/16/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,26,32,377,$352 ,$729 ,,,,,,,,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 377
+gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal -> $729 
+"
+10/16/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,18,0,261,,$261 ,,,,,,,,$0.41 ,$0.41 ,,,,"temp_labor_cost -> Values must be in decimal -> 261
+total_labor_cost -> Values must be in decimal -> $261 
+"
+10/17/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,32,696,$352 ," $1,048 ",,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal ->  $1,048 
+"
+10/17/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,0,812,,$812 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+total_labor_cost -> Values must be in decimal -> $812 
+"
+10/18/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,16,348,$176 ,$524 ,,,,,,,,$0.44 ,$0.48 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $524 
+"
+10/18/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,8,0,109,,$109 ,,,,,,,,$0.31 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 109
+total_labor_cost -> Values must be in decimal -> $109 
+"
+10/21/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176 ,$756 ,,,,,,,,$0.81 ,$1.68 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+10/21/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,0,232,,$232 ,,,,,,,,$0.32 ,$0.97 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+10/22/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,16,696,$176 ,$872 ,,,,,,,,$0.83 ,$0.83 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $872 
+"
+10/22/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,0,232,,$232 ,,,,,,,,$0.37 ,$0.37 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+10/23/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,16,812,$176 ,$988 ,,,,,,,,$0.59 ,$0.59 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $988 
+"
+10/23/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,0,348,,$348 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+total_labor_cost -> Values must be in decimal -> $348 
+"
+10/24/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176 ,$756 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+10/24/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,29,0,421,,$421 ,,,,,,,,$0.67 ,$0.67 ,,,,"temp_labor_cost -> Values must be in decimal -> 421
+total_labor_cost -> Values must be in decimal -> $421 
+"
+10/25/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,24,348,$264 ,$612 ,,,,,,,,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $264 
+total_labor_cost -> Values must be in decimal -> $612 
+"
+10/25/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,18,0,261,,$261 ,,,,,,,,$0.62 ,$0.62 ,,,,"temp_labor_cost -> Values must be in decimal -> 261
+total_labor_cost -> Values must be in decimal -> $261 
+"
+10/28/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176 ,$756 ,,,,,,,,$0.40 ,$0.40 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+10/28/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580 ,,,,,,,,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+total_labor_cost -> Values must be in decimal -> $580 
+"
+10/29/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.30 ,$0.30 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+10/29/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580 ,,,,,,,,$0.46 ,$0.46 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+total_labor_cost -> Values must be in decimal -> $580 
+"
+10/30/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.30 ,$0.50 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+10/30/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,27,0,392,,$392 ,,,,,,,,$0.34 ,$1.02 ,,,,"temp_labor_cost -> Values must be in decimal -> 392
+total_labor_cost -> Values must be in decimal -> $392 
+"
+10/31/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.60 ,$0.83 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+10/31/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,29,0,421,,$421 ,,,,,,,,$0.67 ,$0.67 ,,,,"temp_labor_cost -> Values must be in decimal -> 421
+total_labor_cost -> Values must be in decimal -> $421 
+"
+11/1/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,13,16,189,$176 ,$365 ,,,,,,,,$0.29 ,$0.29 ,,,,"temp_labor_cost -> Values must be in decimal -> 189
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $365 
+"
+11/4/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/4/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464 ,,,,,,,,$0.44 ,$0.44 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/5/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.30 ,$0.30 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/5/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,0,812,,$812 ,,,,,,,,$0.48 ,$0.48 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+total_labor_cost -> Values must be in decimal -> $812 
+"
+11/6/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.34 ,$0.34 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/6/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580 ,,,,,,,,$0.46 ,$0.46 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+total_labor_cost -> Values must be in decimal -> $580 
+"
+11/7/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/7/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,45,0,653,,$653 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 653
+total_labor_cost -> Values must be in decimal -> $653 
+"
+11/8/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.41 ,$0.59 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/8/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696 ,,,,,,,,$0.40 ,$1.21 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+total_labor_cost -> Values must be in decimal -> $696 
+"
+11/11/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.50 ,$0.65 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/11/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464 ,,,,,,,,$0.74 ,$0.74 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/12/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,16,232,$176 ,$408 ,,,,,,,,$0.49 ,$0.49 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $408 
+"
+11/12/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,58,0,841,,$841 ,,,,,,,,$0.57 ,$0.57 ,,,,"temp_labor_cost -> Values must be in decimal -> 841
+total_labor_cost -> Values must be in decimal -> $841 
+"
+11/13/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/13/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696 ,,,,,,,,$3.31 ,$3.31 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+total_labor_cost -> Values must be in decimal -> $696 
+"
+11/14/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,8,464,$88 ,$552 ,,,,,,,,$0.53 ,$0.53 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $552 
+"
+11/14/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696 ,,,,,,,,$0.47 ,$0.47 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+total_labor_cost -> Values must be in decimal -> $696 
+"
+11/15/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,16,348,$176 ,$524 ,,,,,,,,$0.31 ,$0.31 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $524 
+"
+11/15/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/18/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.30 ,$0.89 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/19/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,8,464,$88 ,$552 ,,,,,,,,$1.52 ,$1.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $552 
+"
+10/18/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+10/18/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,8,0,109,,$109 ,,,,,,,,$0.32 ,$0.32 ,,,,"temp_labor_cost -> Values must be in decimal -> 109
+total_labor_cost -> Values must be in decimal -> $109 
+"
+10/21/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,16,232,$176 ,$408 ,,,,,,,,$0.65 ,$0.65 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $408 
+"
+10/22/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,16,232,$176 ,$408 ,,,,,,,,$0.75 ,$0.75 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $408 
+"
+10/23/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,8,696,$88 ,$784 ,,,,,,,,$0.80 ,$0.80 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $784 
+"
+10/24/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,40,8,580,$88 ,$668 ,,,,,,,,$1.04 ,$1.04 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $668 
+"
+10/24/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.64 ,$0.64 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+10/24/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,28,,406,,$406 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 406
+total_labor_cost -> Values must be in decimal -> $406 
+"
+10/25/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+10/25/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+10/25/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,0,348,,$348 ,,,,,,,,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+total_labor_cost -> Values must be in decimal -> $348 
+"
+10/28/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+10/28/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+10/28/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,0,348,,$348 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+total_labor_cost -> Values must be in decimal -> $348 
+"
+10/29/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+10/29/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.37 ,$0.37 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+10/29/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+10/30/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.64 ,$0.64 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+10/30/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,40,8,580,$88 ,$668 ,,,,,,,,$0.28 ,$0.28 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $668 
+"
+10/30/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$0.83 ,$0.83 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+10/31/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,72,16,1044,$176 ," $1,220 ",,,,,,,,$0.67 ,$0.67 ,,,,"temp_labor_cost -> Values must be in decimal -> 1044
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal ->  $1,220 
+"
+10/31/2019,week3,OCT,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,29,0,421,,$421 ,,,,,,,,$1.01 ,$1.01 ,,,,"temp_labor_cost -> Values must be in decimal -> 421
+total_labor_cost -> Values must be in decimal -> $421 
+"
+11/1/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,61,16,885,$176 ," $1,061 ",,,,,,,,$0.47 ,$0.47 ,,,,"temp_labor_cost -> Values must be in decimal -> 885
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal ->  $1,061 
+"
+11/1/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,0,696,,$696 ,,,,,,,,$0.80 ,$0.80 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+total_labor_cost -> Values must be in decimal -> $696 
+"
+11/4/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,80,16,1160,$176 ," $1,336 ",,,,,,,,$0.28 ,$0.28 ,,,,"temp_labor_cost -> Values must be in decimal -> 1160
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal ->  $1,336 
+"
+11/4/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$0.66 ,$0.66 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+11/5/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,64,16,928,$176 ," $1,104 ",,,,,,,,$0.63 ,$0.63 ,,,,"temp_labor_cost -> Values must be in decimal -> 928
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal ->  $1,104 
+"
+11/6/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,43,16,624,$176 ,$800 ,,,,,,,,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 624
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $800 
+"
+11/6/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,0,348,,$348 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+total_labor_cost -> Values must be in decimal -> $348 
+"
+11/7/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,16,696,$176 ,$872 ,,,,,,,,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $872 
+"
+11/8/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,16,696,$176 ,$872 ,,,,,,,,$0.37 ,$0.37 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $872 
+"
+11/8/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$0.45 ,$0.45 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+11/11/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,40,16,580,$176 ,$756 ,,,,,,,,$0.46 ,$0.46 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+11/11/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,20,0,290,,$290 ,,,,,,,,$0.64 ,$0.64 ,,,,"temp_labor_cost -> Values must be in decimal -> 290
+total_labor_cost -> Values must be in decimal -> $290 
+"
+11/12/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,56,0,812,,$812 ,,,,,,,,$0.30 ,$0.30 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+total_labor_cost -> Values must be in decimal -> $812 
+"
+11/12/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,26,,377,,$377 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 377
+total_labor_cost -> Values must be in decimal -> $377 
+"
+11/13/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,16,696,$176 ,$872 ,,,,,,,,$0.41 ,$0.41 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $872 
+"
+11/13/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,0,348,,$348 ,,,,,,,,$0.88 ,$0.88 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+total_labor_cost -> Values must be in decimal -> $348 
+"
+11/14/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,45,8,653,$88 ,$741 ,,,,,,,,$0.74 ,$0.74 ,,,,"temp_labor_cost -> Values must be in decimal -> 653
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $741 
+"
+11/14/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,0,464,,$464 ,,,,,,,,$0.60 ,$0.60 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/15/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,40,16,580,$176 ,$756 ,,,,,,,,$0.37 ,$0.37 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $756 
+"
+11/15/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$1.38 ,$1.38 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+11/18/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,16,696,$176 ,$872 ,,,,,,,,$0.44 ,$0.44 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $872 
+"
+11/18/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,0,464,,$464 ,,,,,,,,$0.66 ,$0.66 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/19/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,64,16,928,$176 ," $1,104 ",,,,,,,,$1.02 ,$1.02 ,,,,"temp_labor_cost -> Values must be in decimal -> 928
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal ->  $1,104 
+"
+11/19/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,74,0,1073,," $1,073 ",,,,,,,,$1.33 ,$1.33 ,,,,"temp_labor_cost -> Values must be in decimal -> 1073
+total_labor_cost -> Values must be in decimal ->  $1,073 
+"
+11/20/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,72,32,1044,$352 ," $1,396 ",,,,,,,,$1.42 ,$1.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 1044
+gdb_labor_cost -> Values must be in decimal -> $352 
+total_labor_cost -> Values must be in decimal ->  $1,396 
+"
+11/20/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,82,0,1189,," $1,189 ",,,,,,,,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 1189
+total_labor_cost -> Values must be in decimal ->  $1,189 
+"
+11/21/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.44 ,$0.44 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/21/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,8,464,$88 ,$552 ,,,,,,,,$1.52 ,$1.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $552 
+"
+11/21/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,88,0,1276,," $1,276 ",,,,,,,,$1.36 ,$1.36 ,,,,"temp_labor_cost -> Values must be in decimal -> 1276
+total_labor_cost -> Values must be in decimal ->  $1,276 
+"
+11/22/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,80,24,1160,$264 ," $1,424 ",,,,,,,,$1.31 ,$1.31 ,,,,"temp_labor_cost -> Values must be in decimal -> 1160
+gdb_labor_cost -> Values must be in decimal -> $264 
+total_labor_cost -> Values must be in decimal ->  $1,424 
+"
+11/22/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,76,0,1102,," $1,102 ",,,,,,,,$0.76 ,$0.76 ,,,,"temp_labor_cost -> Values must be in decimal -> 1102
+total_labor_cost -> Values must be in decimal ->  $1,102 
+"
+11/25/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+11/25/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+11/25/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.58 ,$0.58 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/25/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,50,0,725,,$725 ,,,,,,,,$0.44 ,$0.44 ,,,,"temp_labor_cost -> Values must be in decimal -> 725
+total_labor_cost -> Values must be in decimal -> $725 
+"
+11/25/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,0,464,,$464 ,,,,,,,,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+total_labor_cost -> Values must be in decimal -> $464 
+"
+11/26/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,16,348,$176 ,$524 ,,,,,,,,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $524 
+"
+11/26/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,8,232,$88 ,$320 ,,,,,,,,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $320 
+"
+11/26/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+11/26/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,44,0,638,,$638 ,,,,,,,,$1.10 ,$1.10 ,,,,"temp_labor_cost -> Values must be in decimal -> 638
+total_labor_cost -> Values must be in decimal -> $638 
+"
+11/26/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,16,0,232,,$232 ,,,,,,,,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+total_labor_cost -> Values must be in decimal -> $232 
+"
+11/27/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.34 ,$0.34 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+11/27/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,16,464,$176 ,$640 ,,,,,,,,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $640 
+"
+11/27/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,8,348,$88 ,$436 ,,,,,,,,$0.45 ,$0.45 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $436 
+"
+11/27/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,20,0,283,,$283 ,,,,,,,,$0.66 ,$0.66 ,,,,"temp_labor_cost -> Values must be in decimal -> 283
+total_labor_cost -> Values must be in decimal -> $283 
+"
+11/27/2019,week3,NOV,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,48,0,696,,$696 ,,,,,,,,$0.62 ,$0.62 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+total_labor_cost -> Values must be in decimal -> $696 
+"
+12/2/2019,week3,DEC,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,24,16,348,$176 ,$524 ,,,,,,,,$0.66 ,$0.66 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+gdb_labor_cost -> Values must be in decimal -> $176 
+total_labor_cost -> Values must be in decimal -> $524 
+"
+12/3/2019,week3,DEC,Outbound Project,MIDTONE,MORNING,,OLLIE's,19,SANTOSH,TINTING,MIDTONE,G1,32,8,464,$88 ,$552 ,,,,,,,,,,,,,"temp_labor_cost -> Values must be in decimal -> 464
+gdb_labor_cost -> Values must be in decimal -> $88 
+total_labor_cost -> Values must be in decimal -> $552 
+"

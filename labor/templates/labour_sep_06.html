@@ -1,0 +1,323 @@
+{% extends 'gdb_header.html' %}
+<!-- #Customly added links -->
+    <link href="jquery.fulltable.css" rel="stylesheet"/>
+    <!-- #Customly added links -->
+    <link href="style.css" rel="stylesheet"/>
+    {% load static %}
+
+{% block body%}
+
+ <section class="content">
+        <div class="container-fluid">
+            <!-- <div class="block-header">
+                <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2>
+            </div> -->
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>LABOR COST ANALYSIS</strong>
+                            </h2>
+                            <!-- <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                        </div>
+                        <div class="body">
+							<!-- <div id="toolbar">
+							  <button id="remove" class="btn btn-danger" disabled>
+								<i class="glyphicon glyphicon-remove"></i> Delete
+							  </button>
+							</div> -->
+                            <div class="table-responsive">
+                           
+                                      
+								<!-- <table
+
+								  id="table"
+								  data-toolbar="#toolbar"
+								  data-search="true"
+                                  
+								  data-show-refresh="true"
+								  data-show-toggle="true"
+								  data-show-columns="true"
+								  data-show-export="true"
+								  data-detail-view="true"
+								  data-detail-formatter="detailFormatter"
+								  data-minimum-count-columns="2"
+								  data-show-pagination-switch="true"
+								  data-pagination="true"
+								  data-id-field="id"
+								  data-page-list="[10, 25, 50, 100, ALL]"
+								  data-show-footer="false"
+								  data-side-pagination="server"
+								  #data-url="ajax_fetch_labour_list"
+								  data-response-handler="responseHandler">
+								</table> -->
+                            <table class="table datatable custom-table table-striped table-bordered table-hover select-all " id="table_report" data-search="true" >
+                                     
+                                    <thead>
+                                            <tr>
+                                                <!-- <th class="center" width="3">Id </th> -->
+                                                <th class="center" width="10%">DATE</th>
+                                                <th class="center" width="11%">NO OF TEMP</th>                            
+                                                <th class="center" width="10%">NO OF GDB</th>
+                                                <th class="center" width="11%">TEMP HOURS</th>
+                                                <th class="center" width="10%">GDB HOURS</th>
+                                                <th class="center" width="10%">TEMP COST</th>
+                                                <th class="center" width="10%">GDB COST</th>
+                                                <th class="center" width="11%">LABOR COST</th>
+                                                <th class="center" width="5%">PROFIT</th>
+                                                <th class="center" width="5%">LOSS</th>
+                                                <th class="center" width="25%">NET P & L</th>
+                                            </tr>
+                                    </thead>
+
+                                                
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+        </div>
+    </section>
+       {% include "gdb_footer.html" %}
+
+
+
+<script type="text/javascript">
+
+
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+   
+
+              var table = $('#table_report').DataTable( {
+                // var rowData = table.rows( rows ).data();
+                
+                "bPaginate": true,
+                "bJQueryUI": true,  // ThemeRoller-stöd
+                "bLengthChange": false,
+                "bFilter": false,
+                "bSort": false,
+                "bInfo": true,
+                "bAutoWidth": true,
+                "bProcessing": true,
+                "iDisplayLength": 10,
+                // "processing": true,
+                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+                dom: "Bfrtip",
+                "serverSide": true,
+                "bsearch" : true,
+                // rowId: ''
+                "ajax":{
+                    url :'{% url "ajax_fetch_labour_list" %}', // json datasource
+                    type: "POST",  // type of method  , by default would be get
+                    /*success: function (result) {
+                    $(‘#table_report’).click();
+                    toastr.success(“Object updated !”);
+                    },*/
+                    /*dataType: 'json',*/
+                    /*success: function (data-response-handler) {
+                        Windows.location.reload()
+
+                        
+                    }*/
+                    /*success: function(response) {
+                    window.location.reload();
+                    }*/
+                    error: function(xhr, error, thrown){ 
+                        /*alert("hii")*/
+                           /*error(xhr, error, thrown);*/ // error handling code
+                      // $("#employee_grid_processing").css("display","none");
+                      /*return false*/
+                    }
+                    /*success: function(response) {
+                        window.location.reload();
+                    }*/
+
+                    
+                    /*error: function (errormessage) {
+                        alert(JSON.stringify(errormessage));
+                    }*/
+                    
+                    },
+                    /*"fnDrawCallback": function(oSettings){
+                        return false
+
+                    },*/
+
+
+                // 
+                order: [[ 1, 'asc' ]],
+
+
+    "columns": [
+        /*{
+        data: null,
+        Content: 'id',
+        className: 'select-checkbox',
+        orderable: true
+        },*/
+        /*{"data": " ",},
+         */
+        {
+            "data": "date",
+        }, {
+            "data": "no_of_temp_labour",
+        }, {
+            "data": "no_of_gdb_labour",
+        }, {
+            "data": "temp_hours",
+        }, {
+            "data": "gdb_hours",
+        }, {
+            "data": "temp_cost", render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "gdb_cost",render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "labour_cost",render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "profit",
+        }, {
+            "data": "loss",
+        }, {
+            "data": "net_pl",
+        },
+
+    ],
+
+     "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        $('td:eq(1)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(2)', nRow).css('background-color', '#FEFFCD');
+                },
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        // buttons: [
+        //     { extend: "create", editor: editor },
+        //     { extend: "edit",   editor: editor },
+        //     { extend: "remove", editor: editor }
+        // ]
+    } );
+
+    editor = new $.fn.dataTable.Editor({
+        //ajax: '{% url "edit_labour_list" %}',
+        ajax: {
+
+            edit: {
+                type: 'GET',
+                contentType: 'application/json',
+                url: '{% url "edit_labour_list" %}',
+                data: function(d) {
+                    var newdata = {};
+                    var ids = '';
+                    var clicked_label = '';
+                    var clicked_value = '';
+
+                    $.each(d.data, function(key, value) {
+                        ids = key;
+                        //console.log(ids)
+
+                        $.each(value, function(key1, value1) {
+
+                            clicked_label = key1;
+                            clicked_value = value1;
+
+                        });
+
+                    });
+
+
+
+                    newdata = ({
+                        'id': ids,
+                        'clicked_label': clicked_label,
+                        "clicked_value": clicked_value
+                    });
+
+                    // console.log(newdata);
+
+                    return newdata;
+
+                },
+                success: function(response) {
+                    table.ajax.reload();
+                    // window.location.reload();
+                }
+            }
+            //data:{x:"test"}
+        },
+        table: "#table_report",
+        /*format: "{0:d}"*/
+        //rowId : "id",
+        idSrc: 'id',
+        type: 'POST',
+
+        fields: [{
+            label: "no_of_temp_labour:",
+            name: "no_of_temp_labour"
+        }, {
+            label: "no_of_gdb_labour:",
+            name: "no_of_gdb_labour"
+        }, ]
+
+
+    });
+
+    $('#table_report').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } );
+
+    /*var allData = table.rows().data();*/
+
+    /*setInterval( function () {
+        data_table.ajax.reload( '', 
+        data_table.rows({selected:true}).data()[0]._id );}, 30000 );*/
+        
+    /*setInterval( function () {
+    table.ajax.reload();
+    }, 30000 )*/          
+                
+            });
+
+// setTimeout(function() {
+//    location.reload();
+//    }, 3500);
+    
+/*$('#table_report').DataTable().ajax.reload();
+*/
+/*$('table_report').each(function(){
+   alert(this.id);
+});
+*/
+/*
+$(document).ready(function() {
+  $('#table_report').each(function() {
+    console.log(this.id)
+  })
+});*/
+
+
+</script>
+{% endblock %}
+

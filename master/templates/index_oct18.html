@@ -1,0 +1,815 @@
+ {% extends 'gdb_header.html' %}
+    {% load static %}
+
+{% block body%}
+ <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+            </div>
+
+              
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>MASTER</strong>
+                            </h2>                         
+                            <div id="unitModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header unit_detail_popup">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title"  style="background-color:#2196F3;
+                                    padding-top: 5px;
+                                    padding-bottom: 4px;
+                                    text-align: left;">Units</h4>
+                                </div>
+                                <div class="modal-body" id="unit_detail_view">
+                                </div>
+                                <div class="modal-footer">
+                                  <!-- <button type="button" class="btn btn-default refesh_table" data-dismiss="modal">Close</button> -->
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+
+
+              <div id="importModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header unit_detail_popup">
+                    <button type="button" class="close" data-dismiss="modal" style = 'margin-top:8px;padding-right:12px;'>&times;</button>
+                      <h4 class="modal-title" style="background-color:#2196F3;
+                  padding-top: 5px;
+                  padding-bottom: 4px;
+                  text-align: left;">MASTER IMPORT</h4>
+                    </div>
+
+
+                    <div class="modal-body" id="import_detail_view">
+                        <div id="message_display" >
+                  <div class="bar" style="width: 0%;"><span id="percent"></span></div>
+              </div>
+                      <form method="post" enctype="multipart/form-data" action="{%url 'import_data' %}" id="fileForm">
+                  {% csrf_token %}
+                  <div class="date-input-m">
+                  <input type="file" name="myfile" id="myfile" class="btn" data-file-types="csv">
+                  <div class="margin-top-20"><strong>Note: Allowed Type: CSV </strong><br>Download sample data file <a href="{% static 'sample_csv/Sample_Master.csv' %}" download><strong>here</strong></a></div>
+
+                </div>
+                 <div class="date-input-m">
+                  <button type="submit" class="btn btn-primary" >Upload</button><a class="close_duplicate" href="" id="download_duplicate" target="_blank" style="color: #337ab7;">Download Invalid Records</a>
+                   <button type="button" id="cancel_all" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                   
+                </div>
+                </form>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+                        </div>
+
+          <span id="del_message"></span>
+          <div class="body">
+                 
+          <div class="date-input-m">
+                   <div class="start-m align-m col-sm-4 col-xs-12">
+                    <p>Start Date:</p>
+                      <input name="min" class="border-bottom-input-m" id="min" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                    </div>                      
+                   <div class="end-m  align-m col-sm-4 col-xs-12" >
+                      <p>End Date:</p>
+                      <input name="max" class="border-bottom-input-m" id="max" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                   </div>
+                  <div class="align-m date-selector-m col-sm-4 col-xs-12"> 
+                    <a class="btn btn-primary" id="search_filter" >Search</a>
+                    <a class="btn btn-primary" id="reset-date" >Reset</a>|
+                    <a class="btn btn-primary import_view"
+                    data-toggle="modal" data-target="#importModal"><img src="{% static "images/import.png" %}" width="16" height="15" /> <strong>Import</strong></a>
+                  </div>
+            </div>
+
+
+
+                            <div class="table-responsive">
+
+
+                                         {% for gallon in relation %}
+                                      
+
+                              <input type="hidden" name="unit_type" id="unit_type" value="{{gallon.relationship__project_unit_type}}"/>
+                                                                     {% endfor %}
+ <input type="button" name="delete_record" id="delete_record" value="DELETE" class="btn btn-danger">
+
+
+                                <table id= "example" class="table datatable custom-table table-striped table-bordered table-hover select-all "  > 
+
+                                    <thead>
+                                    <tr>
+                                    <th><input id="checkAll" type="checkbox"></th>
+                                    <th>Project Date</th>
+                                    <th>Project Shift</th>
+                                     <th>Project Group</th>
+                                      <th>Q #</th>
+                                       <th>WHSE #</th>
+                                       <th>Size</th>
+                                    <th>Project Name</th>
+                                    <th>Product Category</th>
+                                    <th>Supervisor Name</th>
+                                    
+                                    <th>TEMP Labor HRS</th>
+                                    <th>GDB Labor HRS</th>
+                                    <th>TEMP Labor cost ($)</th>
+                                    <th>GDB Labor cost ($) </th>
+                                     <th>Total Labor cost ($)</th>
+                                    <th>Units</th>
+                                   <!--  <th>Units/ G(or)Other</th> -->
+                                    <th>Total Units  </th>
+                                    <th>Total Gallons Done</th>  
+                                    <th>Cost/Unit ($) </th>
+                                    <th>Cost/Gallon ($)</th>  
+                                    </tr>
+                                    </thead>
+                                    <tfoot>                                   
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+ 
+
+       {% include "gdb_footer.html" %}
+       <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css'%}">
+    <script type="text/javascript">
+//     $("#checkAll").prop("checked",false);
+
+// $("#checkAll").change(function () 
+// {
+//   // alert('hi');
+//   $("input:checkbox").prop('checked', $(this).prop("checked"));
+// });
+$(function() 
+{
+  $("#download_duplicate").css("display",'none');
+    //$('fileForm').submit(upload);
+// $("#message_display").delay(4000).slideUp(500, function(){
+//     $("#message_display").slideUp(6000);
+// });
+
+    $('input[type=file]').on('change', prepareUpload);
+      
+      var files;
+
+      function prepareUpload(event)
+      {
+        files = event.target.files;
+      }
+
+      
+
+
+         var submit_file=$('#fileForm').submit(function() 
+                    {
+
+                      
+
+                        // event.preventDefault();
+                        var data = new FormData();
+                        data.append('data',$('input[type=file]')[0].files[0]);
+                        // var filetype = $('input[type=file]')[0].files[0].attr('data-file-types');
+
+                              // alert(document.getElementById("myfile").files[0].name);
+
+                            
+                            
+
+                            if($('#myfile').val()!=='')
+                            {
+                              uploaded_file_name=document.getElementById("myfile").files[0].name;
+                              var get_ext = uploaded_file_name.split('.');
+                              // get_ext = get_ext.reverse(); 
+                              // alert(get_ext[1]);
+                              if(get_ext[1]!=='csv')
+                              {
+                                $('#message_display').html('<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Uploaded file not in csv format</div>');
+                              }
+                              // else
+                              // {
+                              //   alert("hi");
+                              // }
+                            }
+                            else
+                            {
+                             $('#message_display').html('<div class="alert alert-warning"><a class="close" href="#" data-dismiss="alert">×</a>Please upload csv file format</div>');
+
+                        
+
+                    
+                            }
+                        $.ajax({
+                            
+                            url: '{%url "import_data" %}',
+                            type: $(this).attr('method'),
+                            data: data,
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                           
+                            beforeSend: function(){
+                               $("#loader").show();
+                             },
+                             complete: function(){
+                               $("#loader").hide();
+                             },
+                            success: function(response) {
+                              // alert(response.display)
+                              // if(response.display=="success")
+                              // {
+                              // return_message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>'+response.status+'</div>';
+
+                              //   // $('#message_display').html(return_message)
+                              //    $('#message_display').html(return_message)
+                              //   setTimeout(function(){
+                              //             $('#importModal').modal('hide')
+                              //             location.reload();
+                              //         }, 4000);
+                              // }
+
+                              // if(response.display=="fail")
+                              // {
+                              // return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>'+response.status+'</div>';
+
+                              //   $('#message_display').html(return_message)
+                              // }
+                              $("#loader").hide();                               
+                              if(response.insert_rows !=0 && response.duplicate_rows == 0)
+                              {
+                              // $("#download_duplicate").css("display",'block');                                
+                              //   $("#download_duplicate").attr('href',"/master/download/"+response.filename)  
+                              // var return_message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>'+response.insert_rows+' Records Inserted Successfully. '+response.duplicate_rows+' Invalid Records found</div>';
+                               var return_message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>'+response.insert_rows+' Records Imported Successfully.</div>';
+                                 $('#message_display').html(return_message);                                
+                              }
+                              else if(response.duplicate_rows != 0 && response.insert_rows ==0)
+                              {
+                                $("#download_duplicate").css("display",'block');                                
+                                $("#download_duplicate").attr('href',"/master/download/"+response.filename)
+                                var return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a> Import Failed '+response.insert_rows+' Records Inserted</div>';
+                                $('#message_display').html(return_message)
+                              }
+                              else if(response.duplicate_rows != 0 && response.insert_rows !=0)
+                              {
+                                // $("#download_duplicate").css("display",'block');                                
+                                // $("#download_duplicate").attr('href',"/master/download/"+response.filename)
+                                // var return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>'+response.insert_rows+' Records Inserted Successfully. '+response.duplicate_rows+' Invalid Records found</div>';
+                                if(response.status =="header")
+                                {
+                                  var return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Headers does not match with the sample data file. Please check the uploaded file</div>';
+                                  
+                                }
+                                else
+                                {
+                                  $("#download_duplicate").css("display",'block');                                
+                                  $("#download_duplicate").attr('href',"/master/download/"+response.filename)
+                                  var return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>'+response.insert_rows+' Records Inserted Successfully. '+response.duplicate_rows+' Invalid Records found</div>';
+                                }
+                                $('#message_display').html(return_message)
+                              }
+
+
+                            }
+                        });
+                        return false;
+                    });
+ $(document).on('click','#download_duplicate',function(e){
+      e.preventDefault();
+      var file=$(this).attr('href');
+      var win = window.open(file, '_blank');   
+      $('#importModal').modal('hide')
+      window.location.reload();
+  });
+
+ // $('#cancel_all').on('click',function(e){
+ 
+ //         document.getElementById("myfile").value = "";   
+ //  });
+
+
+});
+
+//  $('#importModal').on('hidden.bs.modal', function () {
+//   window.location.reload();
+// });
+
+
+
+$('body').on('click','.view_unit_detail',function() {
+
+
+  m_id=$(this).attr('data-id');
+  p_name=atob($(this).attr('data-projectname'));
+  unit_type=atob($(this).attr('data-project-unit-type'));
+  
+  // alert(unit_type);
+  $.ajax
+  ({
+    url:"/master/ajax_popup_unit_view/",
+    method:"post",
+    data:{m_id:m_id,p_name:p_name,unit_type:unit_type},
+    success:function(response)
+    {
+      // $('#myModal_mailsend').modal('show');
+      $('#unit_detail_view').html(response);
+    }
+  });
+
+
+ });
+
+$('#unitModal').on('hidden.bs.modal', function () {
+   //$('#example').DataTable().ajax.reload(null,false);
+});
+
+var editor;
+    
+
+ $(document).ready(function() {
+  $("#reset-date").click(function(){
+    $('#min').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    $('#max').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    // $('#max').val("").datepicker("update");
+    $('#example').DataTable().ajax.reload(null,false);
+})
+
+ // $('#min').datepicker("update");
+ //    $('#max').val("").datepicker("update");
+$.fn.dataTable.ext.search.push(
+  // console.log($('#min').val());
+    function( settings, data, dataIndex ) {
+        // var min = parseInt( $('#min').val(), 10 );
+        // var max = parseInt( $('#max').val(), 10 );
+            var min = $('#mindate').val() ? new Date($('#mindate').val()) : null;
+      var max = $('#maxdate').val() ? new Date($('#maxdate').val()) : null;
+        var project_date = parseFloat( data[0] ) || 0; // use data for the age column
+ 
+        // if ( ( isNaN( min ) && isNaN( max ) ) ||
+        //      ( isNaN( min ) && age <= max ) ||
+        //      ( min <= project_date   && isNaN( max ) ) ||
+        //      ( min <= age   && age <= max ) )
+        // {
+        //     return true;
+        // }
+
+      if (min == null && max == null) {
+        return true;
+      }
+      if (min == null && project_date <= max) {
+        return true;
+      }
+      if (max == null && project_date >= min) {
+        return true;
+      }
+      if (max == null && project_date >= min) {
+        return true;
+      }
+      if (project_date <= max && project_date >= min) {
+        return true;
+      }
+      return false;
+        
+    }
+);
+
+
+
+  $("#min").datepicker({
+      format: "mm/dd/yyyy",      
+      autoclose: true,      
+    }).on('changeDate', function(selected) {      
+      var minDate = new Date(selected.date.valueOf());
+      $('#max').datepicker('setStartDate', minDate);
+    });
+ 
+  // $("#min").datepicker({ onSelect: function () { alert('hi');table.draw(); }, changeMonth: true, changeYear: true });
+  $("#max").datepicker({
+    format: "mm/dd/yyyy",      
+    autoclose: true,      
+    }).on('changeDate', function (selected){
+            var maxDate = new Date(selected.date.valueOf());
+            $('#min').datepicker('setEndDate', maxDate);
+    });
+
+
+var table = $('#example').DataTable( {
+
+      // ajax: '/master/edit_list_home/',
+
+      ajax: {
+    url: "/master/edit_list_home/",
+    type: "POST",
+    data: function (d) {
+        d.min = $('#min').val();
+        d.max = $('#max').val(); },
+    },
+
+
+      dom: "Bfrtip",
+      bSort: true,
+      // pageLength: 5,
+      stateSave: true,
+        columns: [
+            { 
+              "bSortable": false,
+              
+              "mRender":function(data,type,full)
+              {
+                return "<input class='delete_check' name='check_id[]' type='checkbox' value='"+full['id']+"'>";
+              } 
+            },
+            { data: 'project_date'},
+            { data: 'project_shift' },
+            { data: 'project_group' },
+            { data: 'project_q' },
+            { data: 'project_whse' },
+            { data: 'size' },
+            { data: 'project_name' },
+            { data: 'product_category' },
+            { data: 'supervisor_name' },
+            { data: 'project_tmp_labor_hrs' },
+            { data: 'project_gdb_labor_hrs' },
+            { data: 'project_tmp_labor_cost',render: $.fn.dataTable.render.number( ',', '.', 2,'$' ) },
+            { data: 'project_gdb_labor_cost',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            { data: 'project_total_labor_cost',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+           {
+                "mRender":function(data,type,full)
+                {
+                    var encodedString = btoa(full['project_name']);
+                     var encodedString1 = btoa(full['relationship__project_unit_type']);
+                    
+                    return '<button type="button" class="btn btn-info view_unit_detail" data-id='+full['id']+' data-projectname='+encodedString+' data-project-unit-type='+encodedString1+' data-toggle="modal" data-target="#unitModal"><img src="{% static "images/edit.png" %}" width="16" height="15" /></button>';
+                } 
+               
+            },
+            // { data: 'unit_count'},
+            { data: 'unit_done_count'},
+            { data: 'gallon_done_count'},
+            { data: 'master_cost_unit_count',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            { data: 'master_cost_gallon_count', render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            
+
+
+        
+
+           
+
+        ],
+ "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        $('td:eq(10)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(11)', nRow).css('background-color', '#FEFFCD');
+                         $('td:eq(10)', nRow).addClass('temp_labor');
+                        $('td:eq(11)', nRow).addClass('gdb_labor');
+                },
+
+   "buttons": [],
+
+    
+  "footerCallback": function( tfoot, data, start, end, display ) {
+    var api = this.api();
+  },
+      });
+
+
+$("#checkAll").prop("checked",false);
+// var allPages = table.fnGetNodes();
+
+
+$("#checkAll").change(function () 
+{
+  // alert($(this).prop("checked").length);
+  $("input:checkbox").prop('checked', $(this).prop("checked"));
+
+
+});
+
+$('#unitModal').on('hidden.bs.modal', function () {
+    // window.location.reload();
+// $('#example').DataTable().load.;
+table.ajax.reload(null,false);
+});
+$('#importModal').on('hidden.bs.modal', function () {
+    // window.location.reload();
+// $('#example').DataTable().load.;
+table.ajax.reload(null,false);
+});
+
+ $('#example').on('page.dt', function(){
+    var info = table.page.info();
+
+    console.log(info);
+
+
+
+
+    // console.log( 'Showing page: '+info.page+' of '+info.pages );
+    // console.log($("#example input[name='check_id[]']:checked").length);
+    var sorting_var='.sorting_'+info.page;
+
+    var check_td='td'+sorting_var+'  input:checkbox';
+
+
+
+    var checke_length=$("input[name='check_id[]']:checked").length;
+      $(check_td).each(function () {
+            // If checkbox is checked
+            if (this.checked) {
+             //Your code for example
+                // alert($(this).attr('name'));
+                console.log(checke_length);
+            }
+    }); 
+console.log(checke_length);
+
+});
+
+$('#delete_record').click(function(){
+  // alert('hi');
+
+     var deleteids_arr = [];
+     // var deleteids_obj = {};
+      // Read all checked checkboxes
+      // var i=0;
+      // $("input[name='check_id[]']:checked").each(function () {
+      //     // var obj_name = 'obj_name_'+i;
+      //    deleteids_arr.push(parseInt($(this).val()));
+      //    //deleteids_obj[i]=$(this).val();
+      //     // i++
+      // });
+       var checkedcollection = table.$(".delete_check:checked", { "page": "all" });
+        checkedcollection.each(function (index, elem) {
+            deleteids_arr.push($(elem).val());
+        });
+  
+  
+
+   if(deleteids_arr.length == 0)
+   {
+      // alert("Array empty");
+       message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Please select atleast one entry</div>';
+                   // alert(message)
+
+       $('#del_message').html(message)
+                                // setTimeout(function(){
+                                //          // $('#example').DataTable().ajax.reload(null,false);
+                                //           window.location.reload();
+                                //       }, 1500);
+      return false;
+   }
+    var deleteids_arr = JSON.stringify(deleteids_arr);
+
+
+
+      if(deleteids_arr.length > 0){
+        
+         // Confirm alert
+         var confirmdelete = confirm("Are you sure to Delete?");
+         if (confirmdelete == true) {
+            $.ajax({
+               url: '/master/delete_master/',
+               type: 'POST',
+               data: {deleteids_arr: deleteids_arr},
+
+               success: function(response){
+                  if(response.return_message=="success")
+                  {
+                   message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>Successfully Deleted</div>';
+                   // alert(message)
+
+                                $('#del_message').html(message)  
+                                table.ajax.reload( null, false );                              
+                                table.clear().draw();   
+                                // table.columns.adjust().draw(); // Redraw the DataTable
+                                // setTimeout(function(){
+                                //          // $('#example').DataTable().ajax.reload(null,false);
+                                //           window.location.reload();
+                                //       }, 2000);
+                  }
+                if(response.return_message=="fail")
+                  {
+                   message='<div class="alert alert-info"><a class="close" href="#" data-dismiss="alert">×</a>Project not deleted</div>';
+
+                                $('#del_message').html(message)
+                                table.ajax.reload( null, false );                              
+                                table.clear().draw();   
+                                // setTimeout(function(){
+                                //          $('#example').DataTable().ajax.reload(null,false);
+                                //       }, 2000);
+                  }
+                 
+               }
+            });
+         } 
+      }
+     
+   });
+
+
+
+
+
+var lab_arr = []; //Assign array
+
+$('#example tbody').on( 'click', '.temp_labor', function () {
+    
+    // alert('hi');
+    var rowIdx = table.cell( this ).index().row;
+    var columnIdx = table.cell( this ).index().columnVisible
+    //alert(rowIdx);
+    // var dummy_temp_labor_field_value =  $('#temp_labor_field_'+rowIdx+'_0').val();
+
+    var temp_labor_value= $('#temp_labor_'+rowIdx+'_1').val();
+    var temp_master_id_value= $('#master_id_'+rowIdx+'_1').val();
+    var temp_labor_field_value= $('#temp_labor_field_'+rowIdx+'_1').val();
+        
+    console.log(temp_master_id_value);
+     if(typeof temp_labor_value === 'undefined')
+     {
+     console.log(lab_arr);console.log("=====TEST====");
+     temp_labor_value= lab_arr[0].temp_labor_value_arr;
+      temp_master_id_value= lab_arr[0].temp_master_id_value_arr;
+      temp_labor_field_value= lab_arr[0].temp_labor_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(temp_labor_field_value !== 'undefined') 
+      {
+                  lab_arr = [];                         //Assign array empty then push
+                    lab_arr.push({'temp_labor_value_arr':temp_labor_value,
+                      'temp_master_id_value_arr':temp_master_id_value,
+                      'temp_labor_field_value_arr':temp_labor_field_value})
+           
+
+                       var temp_labor_value=temp_labor_value;
+                        var $input = $('<input >', {
+                            value: temp_labor_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'l_temp',
+
+                            blur: function() {
+                                  // alert(e);
+                                  temp_labor_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_master" %}',
+                                                      data:{"id": temp_master_id_value,
+                                                              "clicked_label": temp_labor_field_value,
+                                                              "clicked_value": temp_labor_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload(null,false);
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $('#l_temp').blur();
+
+                            },
+          }).appendTo( $this.empty() ).focus()[0].setSelectionRange(99999, 99999);
+
+      }
+
+  });
+
+
+
+var gdb_arr = []; //Assign array
+
+$('#example tbody').on( 'click', '.gdb_labor', function () {
+    
+    // alert('hi');
+    var rowIdx = table.cell( this ).index().row;
+    var columnIdx = table.cell( this ).index().columnVisible
+    //alert(rowIdx);
+    // var dummy_temp_labor_field_value =  $('#temp_labor_field_'+rowIdx+'_0').val();
+
+    var gdb_labor_value= $('#gdb_labor_'+rowIdx+'_1').val();
+    var gdb_master_id_value= $('#master_id_'+rowIdx+'_1').val();
+    var gdb_labor_field_value= $('#gdb_labor_field_'+rowIdx+'_1').val();
+        
+    // console.log(gdb_labor_field_value);
+     if(typeof gdb_labor_value === 'undefined')
+     {
+     // console.log(gdb_arr);console.log("=====TEST====");
+     gdb_labor_value= gdb_arr[0].gdb_labor_value_arr;
+      gdb_master_id_value= gdb_arr[0].gdb_master_id_value_arr;
+      gdb_labor_field_value= gdb_arr[0].gdb_labor_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(gdb_labor_field_value !== 'undefined') 
+      {
+                  gdb_arr = [];                         //Assign array empty then push
+                    gdb_arr.push({'gdb_labor_value_arr':gdb_labor_value,
+                      'gdb_master_id_value_arr':gdb_master_id_value,
+                      'gdb_labor_field_value_arr':gdb_labor_field_value})
+           
+
+                       var gdb_labor_value=gdb_labor_value;
+                        var $input = $('<input >', {
+                            value: gdb_labor_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'gdb_temp',
+
+                            blur: function() {
+                                  // alert(e);
+                                  gdb_labor_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_master" %}',
+                                                      data:{"id": gdb_master_id_value,
+                                                              "clicked_label": gdb_labor_field_value,
+                                                              "clicked_value": gdb_labor_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload(null,false);
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $('#gdb_temp').blur();
+
+                            },
+          }).appendTo( $this.empty() ).focus()[0].setSelectionRange(99999, 99999);
+
+      }
+
+  });
+
+
+
+
+  $("#search_filter").on('click',function()
+    {
+      var service_date=$("#min").val();
+      // alert($("#min").val());
+      if(service_date=='')
+      {
+        
+          // $("#leap_error").text("Please enter valid service date");
+        
+      }
+      
+      //saving form state
+      //$("#smart_form").saveForm();
+      table.ajax.reload();
+    });
+
+
+
+ // });
+
+
+
+
+});
+    </script>
+
+{% endblock %}

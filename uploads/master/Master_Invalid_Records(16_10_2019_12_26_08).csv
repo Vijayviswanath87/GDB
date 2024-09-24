@@ -1,0 +1,11 @@
+date,week,month,project group,project_name,shift,q#,customer,whse #,supervisor_name,work_type,product_category,size,temp_labor_hrs,gdb labor hrs,temp_labor_cost,gdb_labor_cost,total_labor_cost,units_g1,units_g5,units_q,units_p,units_other,total_units,total_gallons_done,cost_gallon,cost_unit,description_comments,chris lampe comment/notes,laurie's/intern's comments,Reason
+1-17-2018,week3,January,Outbound Project,Paint Sorting,MORNING,,,19l,Amit,SORTING,OTHER,,13l,,$195,,$195.75 ,714,68,300,35,,1117,1132.5,$0.17 ,$0.18 ,,,,"date -> Date field error -> 1-17-2018
+whse # -> Values must be in integer round values -> 19l
+temp_labor_hrs -> Values must be in integer round values -> 13l
+"
+1/19/2018,week4,January,Outbound Project,Relabel,MORNING,S01365,Relabel,19t,Rajan,RELABEL,Paint,G1/G5,3e,1,$43.50 ,$11.00 ,$54.50 ,144,60,,,,204,444,$0.12 ,$0.27 , Scraping the G5 pails and relabeling the G1 and G5 with DC ,,,"whse # -> Values must be in integer round values -> 19t
+temp_labor_hrs -> Values must be in integer round values -> 3e
+"
+1/22/2018,week4,January,Outbound Project,CUT & COMP,MORNING,S01520,CUT & COMP,19at,Rajan,CUT & COMP,Paint,G1/G5,15r,5,$228.38 ,$57.75 ,$286.13 ,512,239,,,,751,1707,$0.17 ,$0.38 , cut and comp the restricted brands ,,,"whse # -> Values must be in integer round values -> 19at
+temp_labor_hrs -> Values must be in integer round values -> 15r
+"

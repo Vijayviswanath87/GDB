@@ -1,0 +1,349 @@
+{% extends 'gdb_header.html' %}
+{% load static %}
+
+{% block body%}
+<section class="content">
+                                    
+
+        <div class="container-fluid">
+
+            <div class="block-header">
+                <!-- <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2> -->
+            </div>
+
+              
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>Graphical Representation</strong>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% include "gdb_footer.html" %}
+
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript"></script>
+<script type="text/javascript">
+
+	function drawChart() {
+		$.ajax
+  ({
+    url:"/savings_loss_list/",
+    method:"post",
+    data:{m_id:m_id,p_name:p_name,unit_type:unit_type},
+    success:function(response)
+    {
+      // $('#myModal_mailsend').modal('show');
+      $('#unit_detail_view').html(response);
+    }
+  });
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Visitations', { role: 'style' } ],
+        ['2010', 10, 'color: gray'],
+        ['2020', 14, 'color: #76A7FA'],
+        ['2030', 16, 'opacity: 0.2'],
+        ['2040', 22, 'stroke-color: #703593; stroke-width: 4; fill-color: #C5A5CF'],
+        ['2050', 28, 'stroke-color: #871B47; stroke-opacity: 0.6; stroke-width: 8; fill-color: #BC5679; fill-opacity: 0.2']
+      ]);
+  }
+</script> -->
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Date", "TEMP COST", { role: "style" } ],
+        ["Compactor", 8.94, "#b87333"],
+        ["CUT & COMP	", 10.49, "silver"],
+        ["Ollie's Aerosol Sorting	", 19.30, "gold"],
+        ["Roller Cover Sleeving	", 21.45, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Project Savings & Loss",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div> -->
+<html>
+  <head>
+  	<style>  
+            .leftbox { 
+                float:left;   
+                width:50%; 
+                height:350px;
+                margin-bottom: 20px;  
+            } 
+
+            .rightbox{ 
+                float:right; 
+                width:100%; 
+                height:400px; 
+            }
+            .pie-chart-m{
+              padding: 0 !important;
+            }
+            @media only screen and (max-width : 767px){
+              .leftbox { 
+                  width:100%;
+                  height: auto;
+              } 
+            }
+
+        </style>  
+<script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
+{% if labour %}
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var myHeight = 350;
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Labor Cost Analysis');
+  data.addColumn('number', 'TEMP COST');
+  data.addColumn('number', 'GDB COST');
+
+  data.addRows([
+      {% for lab in labour %}
+      ['{{lab.date|date:"m/d/Y"}}',{{lab.temp_cost}},{{lab.gdb_cost}}],
+      {% endfor %}
+          /*['DATE', 'TEMP COST', 'GDB COST', ],*/
+          // ["01/02/2019", 4408.00, 2640.00],
+          // ["01/03/2019", 3480.00, 2200.00],
+          // ["04/01/2019", 3480.00, 1320.00],
+          // ["04/02/2019", 3480.00, 1320.00],
+          // ["04/03/2019", 4060.00, 1320.00],
+          // ["04/04/2019", 3944.00, 1320.00],
+          // ["04/05/2019", 3712.00, 1320.00],
+  ]);
+
+  var view = new google.visualization.DataView(data);
+    view.setColumns([0,
+    1,
+    //  {
+    //   calc: function (dt, row) {
+    //     return dt.getValue(row, 1);
+    //   },
+    //   type: "number",
+    //   role: "annotation"
+    // },
+     2,// {
+    //   calc: function (dt, row) {
+    //     return dt.getValue(row, 2);
+    //   },
+    //   type: "number",
+    //   role: "annotation"
+    // },
+    {
+      calc: function (dt, row) {
+        return 0;
+      },
+      label: "Total",
+      type: "number",
+    },
+   {
+        calc: function (dt, row) {
+          return "$"+ (dt.getValue(row, 1) + dt.getValue(row, 2));
+        },
+        type: "string",
+        role: "annotation",
+
+        /*prefix: '$'*/
+      }
+  ]);
+
+
+  var options = {
+    // animation:{{
+    //   calc: function (dt, row) {
+    //     return dt.getValue(row, 2);
+    //   },
+    //   type: "number",
+    //   role: "annotation"
+    // },
+    //   duration: 1000,
+    //   easing: 'out',
+    //   startup: true
+    // },
+    legend:'left',
+    title: 'LABOR COST ANALYSIS',        
+     // hAxis:
+     // {
+     // // slantedText: true,
+     // // slantedTextAngle: 4
+     // },
+    // backgroundColor: 'transparent',
+    // height: myHeight, width: 500,
+    /*legend: {
+      position: 'top',
+      maxLines: 3
+    },*/
+    bar: { groupWidth: '40%' },
+    isStacked: true,
+     vAxis: 
+    {
+      format: '$'
+    },
+    series: {
+      2: {
+        annotations: {
+          stem: {
+            color: "transparent",
+          },
+          textStyle: {
+            color: "#000000",
+          }
+        },
+        enableInteractivity: false,
+        /*tooltip: "none",*/
+        visibleInLegend: false
+      }
+    }    
+  };
+
+ var formatter = new google.visualization.NumberFormat(
+          {prefix: '$'});
+    /*formatter.format(data, 0);*/
+    formatter.format(data, 1);
+    formatter.format(data, 2);
+    $("text:contains("+ options.title +")").attr({'x':'100', 'y':'20'})
+  var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_material'));
+  /*chart.draw(data, {vAxis: {format: '#\'$\''} } );*/
+  chart.draw(view, options);
+}
+  </script>
+  {% endif %}
+  </head>
+  <body> 
+  <div class="col-xs-12 pie-chart-m">                
+           <div id="piechart_3d_1" class="leftbox"></div>                
+           <div id="donutchart_1" class="leftbox"></div> 
+   </div>   
+  	<div class="col-xs-12 pie-chart-m">      
+
+    	     <div id="piechart_3d" class="leftbox"></div>
+    	     <div id="donutchart" class="leftbox"></div>    	
+	 </div>
+   <div class="col-xs-12 pie-chart-m">
+    <div id="columnchart_material" class="rightbox"></div>
+   </div>
+
+  <script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
+  {% if profit %}
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      //Get the records from database dyamically
+      var profit = {{ profit | safe }}
+      var data = google.visualization.arrayToDataTable(profit);
+      var options = {
+        title: 'PROJECT-WISE YTD PROFIT',
+        align: 'center',
+        is3D: true
+        
+      };
+      var formatter = new google.visualization.NumberFormat({prefix: '$'});
+	    formatter.format(data, 1);
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);      
+    }
+  </script>
+  {% endif %}
+  <script type="text/javascript" src="{% static 'js/loader.js' %}"></script>
+  {% if loss %}
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      //Get the records from database dyamically
+      var loss = {{ loss | safe }}
+      var data = google.visualization.arrayToDataTable(loss);
+      var options = {
+        title: 'PROJECT-WISE YTD LOSS',
+        align: 'center',
+        is3D: true
+      };
+
+    var formatter = new google.visualization.NumberFormat({prefix: '$'});
+	  formatter.format(data, 1);
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+    chart.draw(data, options);    
+    }
+  </script>
+  {% endif %}
+
+   {% if today_profit %}
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      //Get the records from database dyamically
+      var loss = {{ today_profit | safe }}
+      var data = google.visualization.arrayToDataTable(loss);
+      var options = {
+        title: "TODAY'S PROJECT-WISE PROFIT",
+        align: 'center',
+        is3D: true
+      };
+
+    var formatter = new google.visualization.NumberFormat({prefix: '$'});
+    formatter.format(data, 1);
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart_3d_1'));
+    chart.draw(data, options);    
+    }
+  </script>
+  {% endif %}
+
+     {% if today_loss %}
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      //Get the records from database dyamically
+      var loss = {{ today_loss | safe }}
+      var data = google.visualization.arrayToDataTable(loss);
+      var options = {
+        title: "TODAY'S PROJECT-WISE LOSS",
+        align: 'center',
+        is3D: true
+      };
+
+    var formatter = new google.visualization.NumberFormat({prefix: '$'});
+    formatter.format(data, 1);
+
+    var chart = new google.visualization.PieChart(document.getElementById('donutchart_1'));
+    chart.draw(data, options);    
+    }
+  </script>
+  {% endif %}
+  </body>
+</html>
+{% endblock %}

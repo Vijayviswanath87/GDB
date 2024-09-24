@@ -1,0 +1,10 @@
+DATE,WEEK,MONTH,PROJECT GROUP,PROJECT_NAME,SHIFT,Q#,CUSTOMER,WHSE #,SUPERVISOR_NAME,WORK_TYPE,PRODUCT_CATEGORY,SIZE,TEMP_LABOR_HRS,GDB LABOR HRS,TEMP_LABOR_COST,GDB_LABOR_COST,TOTAL_LABOR_COST,UNITS_G1,UNITS_G5,UNITS_Q,UNITS_P,UNITS_OTHER,TOTAL_UNITS,TOTAL_GALLONS_DONE,COST_GALLON,COST_UNIT,DESCRIPTION_COMMENTS,CHRIS LAMPE COMMENT/NOTES,LAURIE'S/INTERN'S COMMENTS
+4/1/2019,WEEK4,APRIL,GDB INTERNAL WORKS,Forklift,,,,19,Laurie,,,,24,40,$348.00 ,$88.00 ,$88.00 ,,,,,,,,,,,,
+4/2/2019,WEEK4,APRIL,GDB INTERNAL WORKS,Compactor,MORNING,,Compactor,19,Laurie,,,,,16,,$176.00 ,$176.00 ,,,,,,5,,,$35.20 ,,,
+,WEEK4,APRIL,GDB INTERNAL WORKS,Recycling,MORNING,,Recycling,19,Laurie,,,,,16,,$176.00 ,$176.00 ,,,,,,,,,,,,
+,WEEK4,APRIL,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",,,,19,,,,,,,,,,,,,,,,,,,,,
+,WEEK1,APRIL,Outbound Project,CUT & COMP,EVENING,"S7948,S7664","Resin, Pinturas",19,DEEPAK,CUT LABEL,Paint,"1G, 5G",3,,$43.50 ,,$43.50 ,130,25,,,,155,255,$0.17 ,$0.28 ,1G and 5G cans were scraped and relabeled for outbound order,,
+,WEEK1,APRIL,Outbound Project,Ollie's Aerosol Sorting,EVENING,,Ollie's,19,DEEPAK,STICKERING,Aerosol,12oz,37,,$536.50 ,,$536.50 ,,,,,6000,6000,,,$0.09 ,12 oz aerosol cans were sorted into rainbow for Ollies,,
+4/7/2019,WEEK1,APRIL,GDB Value Added,Roller Cover Sleeving,EVENING,,,19,DEEPAK,SLEEVING,Roller,"9""",17,,$246.50 ,,$246.50 ,,,,,4950,4950,,,$0.05 ,"9"" 3/8 nap rollers were single sleeved",,
+4/8/2019,WEEK1,APRIL,GDB Value Added,Roller Sorting,EVENING,,,19,DEEPAK,SORTING,Roller,"9""",13,,$188.50 ,,$188.50 ,,,,,3770,3770,,,$0.05 ,Rollers of different nap sizes and material were sorted,,
+4/9/2019,WEEK1,APRIL,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",EVENING,,,19,DEEPAK,FORKLIFT,,,0,3,,$38.50 ,$38.50 ,,,,,,,,,,3 forklift drivers worked on 2nd shift,,

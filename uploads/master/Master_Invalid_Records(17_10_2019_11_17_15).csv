@@ -1,0 +1,27 @@
+date,week,month,project group,project_name,shift,q#,customer,whse #,supervisor_name,work_type,product_category,size,temp_labor_hrs,gdb labor hrs,temp_labor_cost,gdb_labor_cost,total_labor_cost,units_g1,units_g5,units_q,units_p,units_other,total_units,total_gallons_done,cost_gallon,cost_unit,description_comments,chris lampe comment/notes,laurie's/intern's comments,Reason
+4/1/2019,WEEK4,APRIL,GDB INTERNAL WORKS,Forklift,MORNING,,,19,Laurie,,,,24,40,$348.00 ,$88.00 ,$88.00 ,0,0,,,,0,,,50,,,,"cost_unit -> Values must be in decimal -> 50
+"
+4/2/2019,WEEK4,APRIL,GDB INTERNAL WORKS,Compactor,MORNING,,Compactor,19,Laurie,,,,0,0,,$176.00 ,$176.00 ,0,0,,,,5,,sdfsd,$35.20 ,,,,"cost_gallon -> Values must be in decimal -> sdfsd
+"
+4/3/2019,WEEK4,APRIL,GDB INTERNAL WORKS,Recycling,MORNING,,Recycling,19,Laurie,,,,0,16,,$176.00 ,$176.00 ,0,0,,,,0,,,4/12/2019,,,,"cost_unit -> Values must be in decimal -> 4/12/2019
+"
+4/4/2019,WEEK4,APRIL,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",MORNING,,,19,,,,,0,0,,,,0,0,,,,0,,,sdfsd,,,,"cost_unit -> Values must be in decimal -> sdfsd
+"
+4/5/2019,WEEK1,APRIL,Outbound Project,CUT & COMP,EVENING,"S7948,S7664","Resin, Pinturas",19,DEEPAK,CUT LABEL,Paint,"1G, 5G",3,0,$43.50 ,,$43.50 ,130,25,,,,155,255,$0.17 ,$0.28 ,1G and 5G cans were scraped and relabeled for outbound order,,,"(Projectname,Projectdate,Shift) may be repeated"
+4/6/2019,WEEK1,APRIL,Outbound Project,Ollie's Aerosol Sorting,EVENING,,Ollie's,19,DEEPAK,STICKERING,Aerosol,12oz,37,0,$536.50 ,,$536.50 ,0,0,,,6000,6000,,,$0.09 ,12 oz aerosol cans were sorted into rainbow for Ollies,,,"(Projectname,Projectdate,Shift) may be repeated"
+4/7/2019,WEEK1,APRIL,GDB Value Added,Roller Cover Sleeving,EVENING,,,19,DEEPAK,SLEEVING,Roller,"9""",17,0,$246.50 ,,$246.50 ,0,0,,,4950,4950,,4/11/2019,$0.05 ,"9"" 3/8 nap rollers were single sleeved",,,"cost_gallon -> Values must be in decimal -> 4/11/2019
+"
+4/8/2019,WEEK1,APRIL,GDB Value Added,Roller Sorting,EVENING,,,19,DEEPAK,SORTING,Roller,"9""",0,0,$188.50 ,,$188.50 ,0,0,,,3770,3770,,4/12/2019,$0.05 ,Rollers of different nap sizes and material were sorted,,,"cost_gallon -> Values must be in decimal -> 4/12/2019
+"
+4/9/2019,WEEK1,APRIL,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",EVENING,,,19,DEEPAK,FORKLIFT,,,0,3,,$38.50 ,$38.50 ,0,0,,,,0,,,25,3 forklift drivers worked on 2nd shift,,,"cost_unit -> Values must be in decimal -> 25
+"
+4/10/2019,WEEK1,APRIL,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",EVENING,,,19,DEEPAK,LUNCH,,,7,0,$108.75 ,,$108.75 ,0,0,,,,0,,sdfsd,,16 workers got a paid lunch break of 30 minutes each,,,"cost_gallon -> Values must be in decimal -> sdfsd
+"
+4/11/2019,WEEK1,APRIL,Outbound Project,Applicator Stickering,MORNING,,Ollies,19,RAVI,STICKERING,Applicator,,4,0,$58.00 ,$88.00 ,$146.00 ,0,0,,,1170,1170,0,,$0.12 ,,,,"(Projectname,Projectdate,Shift) may be repeated"
+4/12/2019,WEEK1,APRIL,Outbound Project,Aerosol Sorting,MORNING,,outbound project,19,RAVI,SORTING,Aerosol,,16,16,$232.00 ,$176.00 ,$408.00 ,0,0,,,,0,0,25,sdfsd,,,,"cost_gallon -> Values must be in decimal -> 25
+cost_unit -> Values must be in decimal -> sdfsd
+"
+4/14/2019,WEEK1,MARCH,GDB Value Added,Roller Sorting,MORNING,,,19,AMIT,SORTING,Roller,,0,16,,$176.00 ,$292.00 ,0,0,,,8800,8800,,50,$0.03 ,,,,"cost_gallon -> Values must be in decimal -> 50
+"
+4/15/2019,WEEK1,MARCH,GDB Value Added,PR19-5 PPG/ WM ,MORNING,,,19,AMIT,SORTING,Paint,,75,24,,$264.00 ,"$1,351.50 ",9030,0,,,,9030,9030,$0.15 ,$0.15 ,,,,"(Projectname,Projectdate,Shift) may be repeated"
+4/16/2019,WEEK4,MARCH,GDB INTERNAL WORKS,Sample Room,MORNING,,,19,KUNAL,OTHER,Miscellaneous,,0,8,,$88.00 ,$88.00 ,0,0,,,,0,,,,Sample Room,,,"(Projectname,Projectdate,Shift) may be repeated"

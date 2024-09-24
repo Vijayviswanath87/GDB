@@ -1,0 +1,50 @@
+        {% load static %}
+      {% block js %}
+ <!-- Jquery Core Js -->
+    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.js' %}"></script>
+
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{% static 'plugins/node-waves/waves.js' %}"></script>
+
+    <!-- Validation Plugin Js -->
+
+    <!-- Custom Js -->
+     <script src="{% static 'js/admin.js' %}"></script>
+     <!-- <script src="{% static 'js/admin.js' %}"></script> -->
+     <script src="{% static 'plugins/jquery.dataTables.js' %}"></script>
+   
+    <script src="{% static 'plugins/jquery.dataTables.min.js' %}"></script>
+
+    <script src="{% static 'js/dataTables.editor.js' %}"></script>
+
+    <!-- <script src="{% static 'js/dataTables.buttons.min.js' %}"></script> -->
+    <!-- <script src="{% static 'js/dataTables.select.min.js' %}"></script> -->
+    <script src="{% static 'js/dataTables.editor.min.js' %}"></script>
+    {% if request.user.is_authenticated %}
+    <!-- <script src="{% static 'plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js' %}"></script> -->
+    <!-- Bootstrap DataTable Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-select/js/bootstrap-select.js' %}"></script>
+
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-editable.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/tableExport.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table-editable.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table-export.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-datatable/sticky-header/bootstrap-table-sticky-header.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-datatable.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js' %}"></script>
+    {% else %}
+   
+        
+        <script src="{% static 'plugins/jquery-validation/jquery.validate.js' %}"></script>
+
+    <script src="{% static 'js/pages/examples/sign-in.js' %}"></script>
+    {% endif %}
+      {% endblock js%}
+</body>
+
+</html>

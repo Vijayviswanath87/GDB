@@ -1,0 +1,13 @@
+date,week,month,project group,project_name,shift,q#,customer,whse #,supervisor_name,work_type,product_category,size,temp_labor_hrs,gdb labor hrs,temp_labor_cost,gdb_labor_cost,total_labor_cost,units_g1,units_g5,units_q,units_p,units_other,total_units,total_gallons_done,cost_gallon,cost_unit,description_comments,chris lampe comment/notes,laurie's/intern's comments,Reason
+1/2/2018,week1,January,Outbound Project,Aerosol Stickering,MORNING,,,19,Amit,STICKERING,Aerosol,Aerosol,6.25,6.25,$90.63 ,$68.75 ,$159.38 ,,,,,2300,2300,,,$0.07 ,,,,"temp_labor_hrs -> Values must be in integer round values -> 6.25
+gdb labor hrs -> Values must be in integer round values -> 6.25
+"
+1/2/2018,week1,January,Outbound Project,Aerosol Stickering,MORNING,,,19,Amit,STICKERING,Aerosol,Aerosol,22.5,3,$326.25 ,$33.00 ,$359.25 ,,,,,5200,5200,,,$0.07 ,,,,"temp_labor_hrs -> Values must be in integer round values -> 22.5
+"
+1/2/2018,week1,January,Outbound Project,Aerosol Cut Label,MORNING,,OLLIES,19,Ravi,CUT LABEL,Aerosol,Aerosol,5,2.5,$72.50 ,$27.50 ,$100.00 ,,,,,720,720,,,$0.14 ,,,,"gdb labor hrs -> Values must be in integer round values -> 2.5
+"
+1/2/2018,week1,January,GDB Value Added,Shieldmore,MORNING,,,19,Rajan,RELABEL,Paint,G1,11.5,8,$166.75 ,$88.00 ,$254.75 ,810,,,,,810,810,$0.31 ,$0.31 ,Relabel with shielmoore and ingredient label ,,,"temp_labor_hrs -> Values must be in integer round values -> 11.5
+"
+1/2/2018,week1,January,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",MORNING,,19 Plant,19,Laurie,OTHER,OTHER,,24,,$348.00 ,,$348.00 ,,,,,,,,,,,,,"(Projectname,Projectdate,Shift) may be repeated"
+1/2/2018,week1,January,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",MORNING,,OFFICE WORK,19,Laurie,OTHER,OTHER,,8,9,$116.00 ,$99.00 ,$215.00 ,,,,,,,,,,,,,"(Projectname,Projectdate,Shift) may be repeated"
+1/2/2018,week1,January,GDB INTERNAL WORKS,"Internal Works, MISC., Transfers ",MORNING,,FORKLIFT,19,Laurie,OTHER,OTHER,,,24,,$264.00 ,$264.00 ,,,,,,,,,,,,,"(Projectname,Projectdate,Shift) may be repeated"

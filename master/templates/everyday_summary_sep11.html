@@ -1,0 +1,551 @@
+ {% extends 'gdb_header.html' %}
+    {% load static %}
+
+{% block body%}
+
+
+<section class="content">
+    <div class="container-fluid">
+  <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                               <strong>DAILY LABOR REPORT</strong>
+                            </h2>
+                       
+                        </div>
+                        <div class="body">
+                            <div class="date-input-m">
+                   <tr>
+                      <td>Report Date:</td>
+                      <td><input name="min" class="border-bottom-input-m" id="min" type="text" value="04/01/2019"></td>
+                      <td id="leap_error" class="error"></td>
+                  </tr>
+
+                 
+                  <a class="btn btn-primary" id="search_filter" >Search</a>
+                   <a class="btn btn-primary" id="reset-date" >Reset</a>
+            </div>
+                            <div class="table-responsive">
+                                <!-- <table  class="table" > 
+                                    <thead>
+                                    <tr>
+                                    <th>Report Date</th>
+                                    <th>Today's Labor Cost</th>
+                                     <th>GDB Workers</th>
+                                      <th>TEMP Workers</th>
+                                       </tr>
+                                       {% for labour in labour_list %}
+                                       <tr>
+                                        <td>{{labour.date}}</td>
+                                         <td>$ {{labour.labour_cost}}</td>
+                                          <td>{{labour.no_of_gdb_labour}}</td>
+                                           <td>{{labour.no_of_temp_labour}}</td>
+                                      </tr>
+                                      {% endfor %}
+                                    </thead>
+                                    
+                                  
+                                </table> -->
+
+                                 <table id= "report" class="table datatable custom-table table-striped table-bordered table-hover select-all " > 
+                                    <thead>
+                                    <tr>
+                                 <!--  <th>Report Date</th> -->
+                                    <th>Labor Cost</th>
+                                     <th>GDB Workers</th>
+                                      <th>TEMP Workers</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tfoot>
+             
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             </div>
+                                    
+
+        <div class="container-fluid">
+
+            <div class="block-header">
+                <!-- <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2> -->
+            </div>
+
+              
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <div id="today_project"><strong>TODAY'S PROJECT</strong></div>
+                            </h2>
+                        
+                            <div id="unitModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body" id="unit_detail_view">
+       
+                  
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default refesh_table" data-dismiss="modal" onclick="javascript:window.location.reload()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+                        </div>
+
+
+<div class="body">
+                 
+                            <div class="table-responsive">
+<div class="date-input-m">
+
+            </div>
+ 
+                          <table id= "summary" class="table datatable custom-table table-striped table-bordered table-hover select-all " > 
+                                    <thead>
+                                    <tr>
+                                    
+                                    <th>List of Projects</th>
+                                    <th>Labor</th>
+                                     <th>Units</th>
+                                      <th>Gallons</th>
+                                       <th>CPU</th>
+                                    <th>CPG</th>
+                                     <th>Target</th>
+                                     <th>P & L</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tfoot>
+             
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                              
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+ <div class="container-fluid">
+  <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                               <strong>NET PROFIT & LOSS</strong>
+                            </h2>
+                       
+                        </div>
+                        <div class="body">
+                             <div class="table-data-m clearfix">
+
+                              <!-- <span>Net Profit :</span> 
+                              <span id="net_profit"></span> -->
+                              <div class="table">
+                              <table>
+                                <tr><td>Net Profit :</td><td id="net_profit"></td></tr>
+                                 <tr><td>Net Loss :</td><td id="net_loss"></td></tr>
+                                  <tr><td><b>Total</b></td><td id="total_pl"></td></tr>
+                                  </table>
+                            </div>
+                            </div>
+                             <div class="table-data-m clearfix">
+
+                              <!-- <span>Net Loss :</span> 
+                              <span id="net_loss"></span> -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             </div>
+
+
+       
+
+
+       {% include "gdb_footer.html" %}
+    <script type="text/javascript">
+
+var editor;
+    
+
+ $(document).ready(function() {
+
+ 
+
+
+  $("#reset-date").click(function(){
+    $('#min').val('04/01/2019').datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+              if($('#min').val()=='04/01/2019')
+  {
+    $("#today_project").html("<strong>TODAY'S PROJECT</strong>")
+  }
+  if($('#min').val()!='04/01/2019')
+  {
+
+    $("#today_project").html(+"<strong>PROJECTs</strong>")
+  }
+    // $('#max').val("").datepicker("update");
+    $('#report').DataTable().ajax.reload(null,false);
+    $('#summary').DataTable().ajax.reload(null,false);
+})
+
+
+
+
+$.fn.dataTable.ext.search.push(
+  // console.log($('#min').val());
+    function( settings, data, dataIndex ) {
+            var min = $('#min').val() ? new Date($('#min').val()) : null;
+      var max = $('#max').val() ? new Date($('#max').val()) : null;
+        var project_date = parseFloat( data[0] ) || 0; // use data for the age column
+ 
+
+      if (min == null && max == null) {
+        return true;
+      }
+      if (min == null && project_date <= max) {
+        return true;
+      }
+      if (max == null && project_date >= min) {
+        return true;
+      }
+      if (max == null && project_date >= min) {
+        return true;
+      }
+      if (project_date <= max && project_date >= min) {
+        return true;
+      }
+  
+      return false;
+        
+    }
+);
+
+
+
+ var table1 = $('#report').DataTable( {
+
+      //ajax: '/master/report/',
+      ajax: {
+          url: "/master/report/",
+          type: "POST",
+          data: function (d) {
+                  d.min = $('#min').val();
+                  },
+      },
+      dom: 'Bfrtip',
+      pageLength: 5,
+      stateSave: true,
+      paging:  false,
+      searching:false,
+      bInfo : false,
+        columns: [
+            
+          
+          // { data: 'report_date' },
+          { data: 'report_labour_cost',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+           { data: 'report_no_of_temp_labour'},
+            { data: 'report_no_of_gdb_labour'},
+            
+        
+
+
+        ]
+    });
+
+  $("#min").datepicker({ onSelect: function () { table1.draw(); }, changeMonth: true, changeYear: true });
+  $("#min").datepicker({ onSelect: function () { table.draw(); }, changeMonth: true, changeYear: true });
+
+  var table = $('#summary').DataTable( {
+
+      //ajax: '/master/edit_list_summary/',
+      ajax: {
+          url: "/master/edit_list_summary/",
+          type: "POST",
+          data: function (d) {
+                  d.min = $('#min').val();
+                  },
+      },      
+      dom: 'Bfrtip',
+      pageLength: 5,
+      stateSave: true,
+      paging:  false,
+      searching:false,
+      bInfo : false,
+        columns: [
+            
+          
+          { data: 'project_name' },
+          { data: 'master_total_labor_cost',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+           { data: 'unit_done_count'},
+            { data: 'gallon_done_count'},
+            
+            { data: 'master_cost_per_unit',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            { data: 'master_cost_per_gallon',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            {data:'summary_target',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            {data: 'pl'},
+
+
+        ],
+      "drawCallback": function( row, data, index ) {
+        var api = this.api();
+        var greenpoint=0;
+        var redpoint=0;
+
+          var inps = document.getElementsByName('hid_green[]');
+          var inps_master_id = document.getElementsByName('hid_green_master_id[]');
+
+          
+          
+
+          //  Profit & loss update to master
+
+          for (var i = 0; i <inps.length; i++) {
+              var inp=inps[i];
+
+              greenpoint = parseFloat(greenpoint) + parseFloat(inp.value)
+
+              var master_inp= inps_master_id[i];
+              // console.log(master_inp.value);
+                  $.ajax
+                  ({
+                    url:"/master/master_pl_update/",
+                    method:"GET",
+                    data:{m_id:master_inp.value,pl_value:inp.value},
+                    success:function(response)
+                    {
+                      console.log(response);
+              
+                    }
+                  });
+
+              
+          }
+
+          $('#net_profit').html('<b style="color:green;">$'+greenpoint+'</b>'); // Show profit in span
+          
+
+
+         var r_inps = document.getElementsByName('hid_red[]');
+         var inps_master_id_red = document.getElementsByName('hid_red_master_id[]');
+
+
+          for (var i = 0; i <r_inps.length; i++) {
+              var r_inp=r_inps[i];
+
+              redpoint = parseFloat(redpoint) + parseFloat(r_inp.value)
+              var master_inp_red= inps_master_id_red[i];
+              // console.log(master_inp_red.value);
+                  $.ajax
+                  ({
+                    url:"/master/master_pl_update/",
+                    method:"GET",
+                    data:{m_id:master_inp_red.value,pl_value:r_inp.value},
+                    success:function(response)
+                    {
+                      console.log(response);
+                      
+                    }
+                  });
+              
+          }
+
+          $('#net_loss').html('<b style="color:red;">$'+redpoint+'</b>'); // Show loss in span
+          // Profit & loss update to master End
+
+          
+        var total_pl=parseFloat(greenpoint)+parseFloat(redpoint);
+        $('#total_pl').html('<b>$'+total_pl+'</b>');
+
+          // Net Profit & loss update to labor 
+
+                  $.ajax
+                          ({
+                            url:"/master/master_pl_update_to_labor/",
+                            method:"GET",
+                            data:{net_profit:greenpoint,net_loss:redpoint,total_pl:total_pl,summary_date:'04/01/2019'},// Need to change this date into current date dynamicaly
+                            success:function(response)
+                            {
+                              console.log(response);
+                             
+                            }
+                          });
+
+          // Net Profit & loss update to labor 
+
+
+
+
+    }
+
+
+      });
+
+ $("#search_filter").on('click',function()
+    {
+      var service_date=$("#min").val();
+      // alert($("#min").val());
+      if(service_date=='')
+      {
+        
+          $("#leap_error").text("Please enter valid service date");
+        
+      }
+      if(service_date=='04/01/2019')
+  {
+    $("#today_project").html("<strong>TODAY'S PROJECT</strong>")
+  }
+  if(service_date!='04/01/2019')
+  {
+   monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];
+
+    var formattedDate = new Date($('#min').val());
+    var d = formattedDate.getDate();
+    var m =  formattedDate.getMonth();
+      // JavaScript months are 0-11
+    var y = formattedDate.getFullYear();
+     var final_date= monthNames[m] + " " + d + " , " + y
+
+$("#txtDate").val(d + "." + m + "." + y);
+    $("#today_project").html("<strong>PROJECTS</strong> - "+final_date)
+  }
+      
+      //saving form state
+      //$("#smart_form").saveForm();
+      table1.ajax.reload();
+       table.ajax.reload();
+    });
+
+
+//    var editor = new $.fn.dataTable.Editor( {
+
+
+//                 ajax:{
+
+//                     edit: {
+//                             type: 'GET',
+//                             contentType: 'application/json',
+//                             url: '/master/edit_master/',
+//                             data: function (d) {
+//                                var newdata ={};
+//                                 var ids= '';
+//                                  var clicked_label= '';
+//                                    var clicked_value= '';
+
+//                                $.each(d.data, function (key, value) {
+//                                 ids= key;
+
+//                                      $.each(value, function (key1, value1) {
+
+//                                         clicked_label= key1;
+//                                         clicked_value= value1;
+                                    
+//                                         }); 
+
+//                                });
+
+//                                newdata=({'id':ids,'clicked_label':clicked_label,"clicked_value":clicked_value});
+
+//                                // console.log(newdata);
+
+//                                return newdata;
+//                             },
+//                             success: function(response) {
+//                                 //window.location.reload();
+//                                 // table.ajax.reload(null,false);
+//                                 $('#summary').DataTable().ajax.reload(null,false);
+//                             }
+//                             //data:{x:"test"}
+//                         },
+
+
+
+//                         },
+
+//         //ajax: '{% url "edit_master" %}',
+//         table: "#summary",
+//         idSrc:  'id',
+ 
+//         type: 'POST',
+//         data: function ( d ) {
+//                               d.dirId =  "id";
+//         },
+          
+//         fields: [ {
+//                 label: "Temp Labour:",
+//                 name: "project_tmp_labor_hrs"
+//             },{
+//                 label: "GDB Labour:",
+//                 name: "project_gdb_labor_hrs"
+//             },
+            
+//         ]
+
+//     } );
+
+//         Activate an inline edit on click of a table cell
+//     $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+//         editor.inline( this );
+//     } );
+//  $('#summary').on( 'click', 'tbody td:not(:first-child)', function (e) {
+//         editor.inline( this, {
+//             onBlur: 'submit'
+//         } );
+//     } );
+
+// function parseCurrency( num ) {
+//     return parseFloat( num.replace( /,/g, '') );
+// }
+//  var total_profit=$('#net_profit').html();
+//            var total_loss=$('#net_loss').html();
+
+//            var profit=parseFloat(total_profit) || 0;
+//            console.log(profit);
+
+
+
+
+
+
+
+});
+    </script>
+
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends 'gdb_header.html' %}
+    {% load static %}
+
+<style type="text/css">
+    .btn dropdown-toggle btn-default{
+        display: block;
+    }
+</style>
+
+{% block body%}
+
+
+{% block extra_js %}
+
+    
+    <form id="tar" method="post" action="", style='margin-top :65px'>
+
+
+            <br><br><br><br>
+            
+
+          
+            <div class="form-line">Project Name:</br></br>
+                           <!--  <input id ="myText"/></br></br></br></br> -->
+                           <select id='first' name="target_projectname">
+                            <option value="">Select</option>
+
+                {% for i in data %}
+            <option value='{{i.project_name}}'>{{i.project_name}}</option>
+            {% endfor %}
+</select>
+                        </div></br></br>
+                        <div >Average cost/unit : </br></br>
+                            <input type="value" id="target_cpu" class="form-control" name="target_cpu" placeholder="Average cost/unit" />
+
+                        </div></br></br>
+                        <div > Average cost/gallon : </br></br>
+                            <input type="value" id="target_cpg" class="form-control" name="target_cpg" placeholder="Average cost/gallon"/ >
+                        </div></br></br>
+                   
+                    
+                        <div class="col-xs-4" >
+                            <button class="btn btn-block bg-blue waves-effect" id="target" type="submit">submit</button>
+                        </div>
+                    </div>
+            
+
+    </form>
+     
+
+   {% include "gdb_footer.html" %}
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script> -->
+<script type="text/javascript">
+
+    
+    /*$(function () {
+    var dataSrc = ["Compactor", "Ollie's Aerosol Sorting", "CUT & COMP", "Roller Cover Sleeving", "Roller Sorting","Applicator Stickering","Aerosol Stickering","PR19-5 PPG/ WM"];*/
+        $(document).ready(function(){
+        $('#first').niceSelect();
+        /*$('#tar').validate({
+            rules: {
+              target_projectname : {
+                required: true,
+                
+              },*/
+      
+     /* password: {
+        required: true,
+        minlength: 6,*/
+          
+              
+             /*   },
+            },
+              messages : {
+              name: {
+                required: "Please select any one option",
+              },
+             */
+              /*password: {
+                minlength: "Please enter minimum of 8 characters",
+              }*/
+            /*}*//*
+  });
+});*/
+        /*$("#myText").autocomplete({
+            source:dataSrc
+        });*/
+/*        $('#target').click(function(){
+            var project_name=$( "#first option:selected" ).text();
+            
+            var average_cost_unit=$("#target_cpu").val();
+            var average_cost_gallon=$("#target_cpg").val();
+
+            $.ajax({
+                url: "", 
+                type:"post",
+                data:{'project_name':project_name,"average_cost_unit":average_cost_unit,"average_cost_gallon":average_cost_gallon},
+                success: function (data) {
+                    window.location.href= "target_list_page/"
+    }
+            });
+
+        });*/
+
+        });
+</script>
+
+
+<!-- <script type="text/javascript">
+    $("#master_project_list").autocomplete({
+source: "/target_form/",
+minLength: 2,
+select: function (event, ui) {
+$('.ui-autocomplete').css('z-index', 99);
+
+$("#master_project_list").val(ui.item.value);
+/*$("#srchFldHidden").val(ui.item.id);*/ // display the selected text
+}
+</script> -->
+    <!-- <script>
+        $(document).ready(function() { $("#e1").select2(); });
+    </script> -->
+<!-- <script type="text/javascript">
+    $(function() {
+
+  // settings for each autocomplete
+  var autocompleteOptions = {
+    minLength: 3,
+    source: function(request, response) {
+      $.ajax({
+        type: "GET",
+        url: "master_project_list",
+        data: { name: request.term },
+        success: function(data) {
+          response(data);
+        }
+      });
+    }
+  };
+
+
+  // dynamically create an input and initialize autocomplete on it
+  function addInput() {
+    var $input = $("<input>", {
+      name: "search",
+      "class": "searchInput",
+      maxlength: "20"
+    });
+    $input
+      .appendTo("form#myForm")
+      .focus()
+      .autocomplete(autocompleteOptions);
+  };
+
+  // initialize autocomplete on first input
+  $("input.searchInput").autocomplete(autocompleteOptions);
+  $("input#addButton").click(addInput);
+});
+    
+
+    /*$(document).ready(function(){
+        $('.master_project_list').select2({
+
+placeholder: 'Click to view brokers',
+// dropdownParent: $('.container-fluid'),
+ajax: {
+
+url: "master_project_list",
+
+dataType: 'json',
+
+delay: 250,
+
+processResults: function (data) {
+
+// $("#create_broker").show();
+
+return {
+
+results: data
+
+};
+
+},
+
+cache: true
+
+}
+
+});
+
+});*/
+</script> -->
+<!-- <script type="text/javascript">
+    
+    $(document).ready(function(){
+
+        $('.master_project_list').select2({
+
+placeholder: 'Click to view brokers',
+// dropdownParent: $('.container-fluid'),
+ajax: {
+
+url: "{% url 'get_master_project_list' %}",
+
+dataType: 'json',
+
+delay: 250,
+
+type:'POST',
+
+processResults: function (data) {
+
+// $("#create_broker").show();
+
+return {
+
+results: data
+
+};
+
+},
+
+cache: true
+
+}
+
+  });
+ });
+</script> -->
+
+
+
+
+<script type="text/javascript">
+  
+       /*$('#first').on('change', function() {
+            alert( this.value );
+});
+*/
+        /*$(".master_project_list").select2({
+    tags: true,
+    multiple: true,
+    // tokenSeparators: [',', ' '],
+    minimumInputLength: 2,
+    minimumResultsForSearch: 10,
+    ajax: {
+        url: '{% url 'get_master_project_list' %}',
+        dataType: "json",
+        type: "GET",
+        data: function (params) {
+            var queryParameters = {
+                q: params.term
+            }
+            return queryParameters;
+        },
+        processResults: function (data) {
+            return {
+                results: $.map(data, function (item) {
+                    return {
+                        text: item.target_projectname,
+                        id: item.id
+                    }
+                })
+            };
+
+        }
+    }
+});
+*/  
+ 
+
+</script>
+
+{% endblock %}
+
+
+{% endblock %}

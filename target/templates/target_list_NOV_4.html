@@ -1,0 +1,652 @@
+{% extends 'gdb_header.html' %}
+{% load static %}
+<!-- #Customly added links -->
+    <link href="jquery.fulltable.css" rel="stylesheet"/>
+    <!-- #Customly added links -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    
+      
+
+
+    
+
+{% block body%}
+
+ <section class="content">
+        <div class="container-fluid">
+            <!-- <div class="block-header">
+                <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2>
+            </div> -->
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>TARGET</strong>
+                            </h2>
+
+                           
+                          
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  .ui-autocomplete-loading {
+    background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+
+
+    $( "#target_projectname" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          url: "project_name_autocomplete",
+          dataType: "json",
+          data: {
+            term: request.term
+          },
+
+          success: function (data) {
+           /*alert(data)*/
+        response($.map(data, function (item) {
+          
+            return {
+                label: item.label,
+                value: item.label
+            };
+            
+        }));
+    }
+
+        });
+      },
+      minLength: 3,
+      select: function( event, ui ) {
+        console.log( ui.item ?
+          "Selected: " + ui.item.label :
+          "Nothing selected, input was " + this.value);
+
+        $(this).val(ui.item.label);
+      },
+      open: function() {
+        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+      },
+      close: function() {
+        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+      }
+    });
+
+  });
+
+  </script> -->
+
+
+                         
+                        </div>
+                        <span id="del_message">
+                        {% if messages %}
+                          {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>Project added successfully</div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                      </span>
+                        
+                        <div class="body">
+
+                             
+                            <!-- <div id="toolbar">
+                              <button id="remove" class="btn btn-danger" disabled>
+                                <i class="glyphicon glyphicon-remove"></i> Delete
+                              </button>
+                            </div> -->
+                            <div class="table-responsive">
+                           
+                                     
+                                <!-- <table
+
+                                  id="table"
+                                  data-toolbar="#toolbar"
+                                  data-search="true"
+                                  
+                                  data-show-refresh="true"
+                                  data-show-toggle="true"
+                                  data-show-columns="true"
+                                  data-show-export="true"
+                                  data-detail-view="true"
+                                  data-detail-formatter="detailFormatter"
+                                  data-minimum-count-columns="2"
+                                  data-show-pagination-switch="true"
+                                  data-pagination="true"
+                                  data-id-field="id"
+                                  data-page-list="[10, 25, 50, 100, ALL]"
+                                  data-show-footer="false"
+                                  data-side-pagination="server"
+                                  #data-url="ajax_fetch_labour_list"
+                                  data-response-handler="responseHandler">
+                                </table> -->
+                            <table class="table datatable custom-table table-striped table-bordered table-hover select-all " id="target_report" >
+                                     
+                                    <thead>
+                                            <tr>
+                                                <!-- <th class="center" width="3">Id </th> -->
+                                                <th class="center" width="1%"><input id="checkAll" type="checkbox"></th>
+                                                <th class="center" width="10%">Row Labels</th>
+                                                <th class="center" width="11%">Average cost/unit</th>                            
+                                                <th class="center" width="10%">Average cost/gallon</th>
+                                                <th class="center" width="11%">Target 2019 -20%</th>
+                                                
+                                            </tr>
+                                    </thead>
+                                    
+                        <div class="col-xs-1" >
+                            <button class="btn btn-block bg-blue waves-effect" data-toggle="modal" data-target="#target_modal"   id="ajax_call" type="button">Add</button>
+                           <!--  <button type="button" class="btn btn-block bg-blue waves-effect" data-toggle="modal" data-target="#unitModal">Uk</button> -->
+                           <!-- <input type="button" name="delete_record" id="delete_record" value="DELETE" class="btn btn-danger"> -->
+                        </div>
+                        <div class="col-xs-1" >
+                            <input type="button" class="btn btn-block bg-blue waves-effect btn-danger" id="delete_record" type="button" value="Delete">                           
+                        </div>
+                         
+                        </div>
+                                                
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+        </div>
+        <div id="target_modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header unit_detail_popup">
+
+        <button type="button" class="close" data-dismiss="modal" style = 'margin-top:8px;padding-right:12px;'>&times;</button>
+        <h4 class="modal-title" >Add Project</h4>
+        </div>
+      <div class="modal-body" id="unit_detail_view">
+     
+
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="target" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+    </section>
+       {% include "gdb_footer.html" %}       
+       <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">    
+ 
+<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+<!-- <script src="https://cdn.rawgit.com/xcash/bootstrap-autocomplete/3de7ad37/dist/latest/bootstrap-autocomplete.js"></script> -->
+
+    <script src="{% static 'js/nameinput.js' %}"></script>
+    <link href="{% static 'css/custom.css' %}">
+<script type="text/javascript">
+$("#ajax_call").click(function(){
+      $.ajax({
+          url: "modal_pop_form",
+          type:"POST",
+          data:{},
+          
+          success: function (data) {
+        $("#unit_detail_view").html(data)
+    }
+
+        });
+      });
+    
+
+function target_form()
+{
+    window.location.href= "target_form"
+}
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+
+  $("#checkAll").prop("checked",false);
+
+  $("#checkAll").change(function () 
+  {
+    // alert('hi');
+    $("input:checkbox").prop('checked', $(this).prop("checked"));
+  });
+
+    
+var table = $('#target_report').DataTable( {
+                // var rowData = table.rows( rows ).data();
+                
+                "bPaginate": true,
+                "bJQueryUI": true,  // ThemeRoller-stöd
+                "bLengthChange": false,
+                "bFilter": false,
+                "bSort": false,
+                "bInfo": true,
+                "bAutoWidth": true,
+                "bProcessing": true,
+                "iDisplayLength": 10,
+                // "processing": true,
+                "lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+                dom: "Bfrtip",
+                "serverSide": true,
+                "bsearch" : true,
+                // rowId: ''
+                "ajax":{
+                    url :'{% url "target_list" %}', // json datasource
+                    type: "POST",  // type of method  , by default would be get
+                    /*type: 'GET',*/
+                    /*contentType: 'application/json',*/
+                    /*success: function (result) {
+                    $(‘#table_report’).click();
+                    toastr.success(“Object updated !”);
+                    },*/
+                    /*dataType: 'json',*/
+                    /*success: function (data-response-handler) {
+                        Windows.location.reload()
+
+                        
+                    }*/
+                    /*success: function(response) {
+                    window.location.reload();
+                    }*/
+                    error: function(xhr, error, thrown){ 
+                        /*alert("hii")*/
+                           /*error(xhr, error, thrown);*/ // error handling code
+                      // $("#employee_grid_processing").css("display","none");
+                      /*return false*/
+                    }
+                    /*success: function(response) {
+                        window.location.reload();
+                    }*/
+
+                    
+                    /*error: function (errormessage) {
+                        alert(JSON.stringify(errormessage));
+                    }*/
+                    
+                    },
+                    /*"fnDrawCallback": function(oSettings){
+                        return false
+
+                    },*/
+
+
+                // 
+                order: [[ 1, 'asc' ]],
+                buttons:[],
+
+
+    "columns": [
+        /*{
+        data: null,
+        Content: 'id',
+        className: 'select-checkbox',
+        orderable: true
+        },*/
+        /*{"data": " ",},
+         */
+         { 
+              "bSortable": false,
+              
+              "mRender":function(data,type,full)
+              {
+                return "<input class='delete_check' name='check_id[]' type='checkbox' value='"+full['id']+"'>";
+              } 
+            },
+        {
+            "data": "target_projectname",
+        }, {
+            "data": "target_cpu",
+        }, {
+            "data": "target_cpg",
+        }, {
+            "data": "target",
+        }, 
+
+    ],
+     "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        $('td:eq(2)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(3)', nRow).css('background-color', '#FEFFCD');
+                         $('td:eq(2)', nRow).addClass('target_cpu');
+                         $('td:eq(3)', nRow).addClass('target_cpg');
+                },
+        /*select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },*/
+        // buttons: [
+        //     { extend: "create", editor: editor },
+        //     { extend: "edit",   editor: editor },
+        //     { extend: "remove", editor: editor }
+        // ]
+"drawCallback": function( row, data, index ) {
+    
+        
+},
+
+    });
+
+$('#delete_record').click(function(){
+  // alert('hi');
+
+     var deleteids_arr = [];
+     // var deleteids_obj = {};
+      // Read all checked checkboxes
+      // var i=0;
+      $("input[name='check_id[]']:checked").each(function () {
+          // var obj_name = 'obj_name_'+i;
+         deleteids_arr.push(parseInt($(this).val()));
+         //deleteids_obj[i]=$(this).val();
+          // i++
+      });
+  
+  
+
+   if(deleteids_arr.length == 0)
+   {
+      // alert("Array empty");
+       message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Please select atleast one project</div>';
+                   // alert(message)
+
+      $('#del_message').html(message)
+      // setTimeout(function(){
+      //          // $('#example').DataTable().ajax.reload(null,false);
+      //           window.location.reload();
+      //       }, 1500);
+      return false;
+   }
+    var deleteids_arr = JSON.stringify(deleteids_arr);
+
+
+
+      if(deleteids_arr.length > 0){
+        
+         // Confirm alert
+         var confirmdelete = confirm("Are you sure to Delete?");
+         if (confirmdelete == true) {
+            $.ajax({
+               url: '/target/delete_target/',
+               type: 'POST',
+               data: {deleteids_arr: deleteids_arr},
+
+               success: function(response){
+                  if(response.return_message=="success")
+                  {
+                   message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>Project deleted successfully</div>';
+                   // alert(message)
+
+                  $('#del_message').html(message)
+                  table.ajax.reload( null, false );                              
+                  table.clear().draw();   
+                  // setTimeout(function(){
+                  //          // $('#example').DataTable().ajax.reload(null,false);
+                  //           window.location.reload();
+                  //       }, 2000);
+                  }
+                if(response.return_message=="fail")
+                  {
+                   message='<div class="alert alert-info"><a class="close" href="#" data-dismiss="alert">×</a>Project not deleted</div>';
+                   $('#del_message').html(message)
+                   table.ajax.reload( null, false );                              
+                   table.clear().draw();   
+                  }
+                 
+               }
+            });
+         } 
+      }
+     
+   });
+       
+
+
+
+    /*editor = new $.fn.dataTable.Editor({
+    //     ajax: '{% url "target_list" %}',
+        ajax: {
+
+            edit: {
+                type: 'GET',
+                contentType: 'application/json',
+                url: '{% url "edit_target_list" %}',
+                data: function(d) {
+                    var newdata = {};
+                    var ids = '';
+                    var clicked_label = '';
+                    var clicked_value = '';
+
+                    $.each(d.data, function(key, value) {
+                        ids = key;
+                        //console.log(ids)
+
+                        $.each(value, function(key1, value1) {
+
+                            clicked_label = key1;
+                            clicked_value = value1;
+
+                        });
+
+                    });
+
+
+
+                    newdata = ({
+                        'id': ids,
+                        'clicked_label': clicked_label,
+                        "clicked_value": clicked_value
+                    });
+
+
+                    return newdata;
+
+                },
+                success: function(response) {
+                    table.ajax.reload();
+                },
+            }
+        },*/
+        /*.table-cell-edit{
+        background-color: lightgoldenrodyellow;
+    }*/
+       /* table: "#target_report",
+    
+        idSrc: 'id',
+        type: 'POST',
+        // background-color: 'lightgoldenrodyellow';
+        fields: [{
+            label: "target_cpu:",
+            name: "target_cpu"
+        }, {
+            label: "target_cpg:",
+            name: "target_cpg"
+        }, ]
+
+
+    });
+*/
+   /*$('#target_report').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } ); */ 
+
+
+var cpu_arr = [];
+
+    $('#target_report').on( 'click', '.target_cpu', function () {
+       var rowIdx = table.cell( this ).index().row;       
+       var columnIdx = table.cell( this ).index().columnVisible
+
+    var dummy_target_cpu_field_value =  $('#target_cpu_field_'+rowIdx+'_0').val();
+
+    var target_cpu_value= $('#target_cpu_'+rowIdx+'_'+columnIdx).val();
+    var target_cpu_id_value= $('#target_id_'+rowIdx+'_'+columnIdx).val();
+    var target_cpu_field_value= $('#target_cpu_field_'+rowIdx+'_'+columnIdx).val();
+    // alert(rowIdx)
+    // alert(columnIdx)
+    //     // alert(temp_labor_field_value);
+    // alert(target_cpu_field_value)  
+     if(typeof target_cpu_value === 'undefined')
+     {
+
+     console.log(cpu_arr);console.log("=====TEST====");
+      target_cpu_value= cpu_arr[0].target_cpu_value_arr;
+      target_cpu_id_value= cpu_arr[0].target_cpu_id_value_arr;
+      target_cpu_field_value= cpu_arr[0].target_cpu_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(target_cpu_field_value !== 'undefined') 
+      {
+        // alert(target_cpu_id_value)
+
+                  cpu_arr = [];                         //Assign array empty then push
+                    cpu_arr.push({'target_cpu_value_arr':target_cpu_value,
+                      'target_cpu_id_value_arr':target_cpu_id_value,
+                      'target_cpu_field_value_arr':target_cpu_field_value})
+           
+
+                       var target_cpu_value=target_cpu_value;
+                        var $input = $('<input >', {
+                            value: target_cpu_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'tar_t',
+                            class:'numinput',
+
+                            blur: function() {
+                                  // alert(e);
+                                  target_cpu_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_target_list" %}',
+                                                      data:{"id": target_cpu_id_value,
+                                                              "clicked_label": target_cpu_field_value,
+                                                              "clicked_value": target_cpu_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload(null,false);
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $('#tar_t').blur();
+
+                            },
+
+                          
+                        //}).appendTo( $this.empty() ).focus();
+                    }).appendTo( $this.empty() ).focus()[0].setSelectionRange(99999, 99999);
+
+      }
+
+  });
+
+var cpg_arr = []; //Assign array
+
+$('#target_report tbody').on( 'click', '.target_cpg', function () {
+       var rowIdx = table.cell( this ).index().row;
+       var columnIdx = table.cell( this ).index().columnVisible
+
+       var target_cpg_value= $('#target_cpg_'+rowIdx+'_'+columnIdx).val();
+       var target_cpg_id_value= $('#target_id_'+rowIdx+'_'+columnIdx).val();
+       var target_cpg_field_value= $('#target_cpg_field_'+rowIdx+'_'+columnIdx).val();
+       // console.log(gdb_labor_value);
+       /*alert("hii")*/
+       if(typeof target_cpg_value === 'undefined')
+       {
+       //console.log(lab_arr);console.log("=====TEST====");
+       target_cpg_value= cpg_arr[0].target_cpg_value_arr;
+        target_cpg_id_value= cpg_arr[0].target_cpg_id_value_arr;
+        target_cpg_field_value= cpg_arr[0].target_cpg_field_value_arr;
+        // return false;
+       }
+
+
+       var $this = $(this);
+       if(target_cpg_field_value !== "undefined")
+       {
+              cpg_arr = [];                           //Assign array empty then push
+              cpg_arr.push({'target_cpg_value_arr':target_cpg_value,
+                'target_cpg_id_value_arr':target_cpg_id_value,
+                'target_cpg_field_value_arr':target_cpg_field_value})  
+
+                         
+                         var target_cpg_value=target_cpg_value;
+                          var $input = $('<input >', {
+                              value: target_cpg_value,
+                              type: 'text',
+                              id:'cpg',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                             class:'numinput',
+                              blur: function() {
+                                 // $this.text(this.value);
+                                    target_cpg_new_value=this.value;
+
+                                       $.ajax({
+                                                    type: 'GET',
+                                                    contentType: 'application/json',
+                                                    url: '{% url "edit_target_list" %}',
+                                                    data:{"id": target_cpg_id_value,
+                                                            "clicked_label": target_cpg_field_value,
+                                                            "clicked_value": target_cpg_new_value
+                                                    },
+                                                    success: function(response) {
+                                                        // console.log(response);
+                                                        table.ajax.reload(null,false);
+                                                        // window.location.reload();
+                                                    }
+                             
+                                                });
+                                
+                              },
+                              keyup: function(e) {
+
+                                console.log(e)
+                                if (e.which === 13) $('#cpg').blur();
+                              }
+                          }).appendTo( $this.empty() ).focus()[0].setSelectionRange(99999, 99999);
+        }
+
+ });
+
+
+         
+    
+
+    });
+
+           
+
+ /* }); */
+</script>
+
+
+{% endblock %}
+
+

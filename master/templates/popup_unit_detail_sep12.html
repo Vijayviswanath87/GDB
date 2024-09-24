@@ -1,0 +1,492 @@
+        {% load static %}
+{% block js %}
+
+      <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+
+    <link href="{% static 'css/editor.dataTables.min.css' %}" rel="stylesheet" />
+
+    <link href="{% static 'css/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+
+
+     
+    <!-- Bootstrap Core Js -->
+    <script src="{% static 'plugins/bootstrap/js/bootstrap.js' %}"></script>
+
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="{% static 'plugins/node-waves/waves.js' %}"></script>
+
+    <!-- Validation Plugin Js -->
+     <script src="{% static 'js/admin.js' %}"></script>
+
+    <!-- Custom Js -->
+     <script src="{% static 'plugins/jquery.dataTables.js' %}"></script>
+   
+    <script src="{% static 'plugins/jquery.dataTables.min.js' %}"></script>
+
+    
+
+     
+     <!--
+<script src="{% static 'js/dataTables.editor.js' %}"></script>
+      <script src="{% static 'plugins/jquery.dataTables.bootstrap.js' %}"></script> -->
+
+
+
+
+     
+    <!-- <script src="{% static 'js/jquery.dataTables.bootstrap.js' %}"></script>
+
+    <script src="{% static 'plugins/jquery-datatable/jquery.dataTables.js' %}"></script> -->
+   <!-- <script src="{% static 'plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js' %}"></script>
+     <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.flash.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/extensions/export/jszip.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/extensions/export/pdfmake.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/extensions/export/vfs_fonts.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.html5.min.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/extensions/export/buttons.print.min.js' %}"></script>-->
+    <!-- Bootstrap DataTable Plugin Js -->
+    <script src="{% static 'plugins/bootstrap-select/js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js' %}"></script>
+
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-editable.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/tableExport.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table.min.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table-editable.min.js' %}"></script>
+  <!--  <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-table-export.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-datatable/sticky-header/bootstrap-table-sticky-header.js' %}"></script>-->
+    <script src="{% static 'plugins/bootstrap-datatable/js/bootstrap-datatable.js' %}"></script>
+
+ 
+
+
+
+      {% endblock js%}
+<div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Units
+
+                            </h2>
+                            <!-- <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                        </div>
+
+<div class="body">
+
+  {% if unit_type == 'G' %}
+
+
+<div class="table-responsive" id="tbl_units">
+{{master_project_name}}
+
+
+
+
+                                <table id= "units_detail" class="table datatable custom-table table-striped table-bordered table-hover select-all "  > 
+                                    <thead>
+                                    <tr>
+                                    
+                                     <th>Gallon (G)</th>
+                                    <th>Unit</th>
+
+                                
+                                    
+
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tfoot>
+
+                                 
+                                    </tfoot>
+                                </table>
+                                <input type="hidden" name="master_id" id="master_id" value="{{master_id}}">
+                                 <!-- <input type="textbox" name="master_project_name" id="master_id" value="{{master_project_name}}"> -->
+
+                            </div>
+                             <div class="table-data-m clearfix">
+                             {% for gallon in gallon_unit %}
+                               <div class="quarts-m">
+                                  <span class="title-data-tab-m">  <b>Quarts </b></span>
+                                  <span class="title-data-tab-m">  <b>Pints </b> </span> 
+                               </div>
+
+                               <div class="quarts-m-value">
+                                 <td><span class="title-data-val-m" id="quarts">{{gallon.quarts}}</span></td>
+                                 <span class="title-data-val-m" id="pints">{{gallon.pints}}</span>
+                               </div>
+                                <input type="hidden" name="quart_append_text" id="quart_append_text" value="{{gallon.quarts}}">
+                                <input type="hidden" name="pints_append_text" id="pints_append_text" value="{{gallon.pints}}">
+                               <input type="hidden" name="quart_id" id="quart_id" value="{{gallon.id}}">
+                               <input type="hidden" name="quart_name" id="quart_name" value="quarts">
+                               <input type="hidden" name="pints_name" id="pints_name" value="pints">
+
+                            {% endfor %}
+                          </div>
+
+{%else%}
+{{master_project_name}}
+
+<div class="table-responsive" id="tbl_units">
+
+{% for gallon in gallon_unit %}
+                               <div class="quarts-m">
+                                  <span class="title-data-tab-m">  <b>Others </b></span>
+                               </div>
+
+                               <div class="quarts-m-value">
+                                 <td><span class="title-data-val-m" id="others">{{gallon.project_total_units}}</span></td>
+                               </div>
+                                <input type="hidden" name="others_append_text" id="others_append_text" value="{{gallon.project_total_units}}">
+                               <input type="hidden" name="quart_id" id="quart_id" value="{{gallon.id}}">
+                               <input type="hidden" name="others_name" id="others_name" value="others">
+
+
+                            {% endfor %}
+                            </div>
+
+{% endif %}
+
+
+                            </div>
+                             </div>
+
+ </div>
+
+ </div>
+
+
+<script type="text/javascript">
+var editor;
+
+
+$('#quarts').on('click', function() {
+   var $this = $(this);
+   var quarts_value_text=$('#quart_append_text').val();
+    var $input = $('<input >', {
+        value: quarts_value_text,
+        type: 'text',
+        style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+        blur: function() {
+           //$this.text(this.value);
+
+            q_value=0;
+           if(this.value!="")
+           {
+             q_value=this.value;
+           }
+
+
+            $.ajax({
+                            type: 'GET',
+                            contentType: 'application/json',
+                            url: '/master/edit_quartspints/',
+                            data:{'quarts_value':q_value,'qp_id':$('#quart_id').val(),'get_val':$('#quart_name').val()},
+                            
+                            success: function(response) {
+                              
+                              $('#quart_append_text').val(response.quarts);
+                              $('#quarts').text(response.quarts);
+                              console.log(response)
+                                // window.location.reload();
+                                // table.ajax.reload(null,false);
+                                // $('#units_detail').DataTable().ajax.reload(null,false);
+                            }
+                          });
+          
+        },
+        keyup: function(e) {
+          console.log(e)
+         
+
+           if (e.which === 13) $input.blur();
+
+        }
+    }).appendTo( $this.empty() ).focus();
+
+});
+
+$('#pints').on('click', function() {
+    var $this = $(this);
+    var pints_value_text=$('#pints_append_text').val();
+    var $input = $('<input>', {
+        value: pints_value_text,
+        type: 'text',
+        style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+        blur: function() {
+           //$this.text(this.value);
+
+           p_value=0;
+           if(this.value!="")
+           {
+             p_value=this.value;
+           }
+            $.ajax({
+                            type: 'GET',
+                            contentType: 'application/json',
+                            url: '/master/edit_quartspints/',
+                            data:{'pints_value':p_value,'qp_id':$('#quart_id').val(),'get_val':$('#pints_name').val()},
+                            
+                            success: function(response) {
+                              console.log(response)
+                              $('#pints_value_text').val(response.pints);
+                              $('#pints').text(response.pints);
+                              console.log(response)
+                                // window.location.reload();
+                                // table.ajax.reload(null,false);
+                                // $('#units_detail').DataTable().ajax.reload(null,false);
+                            }
+                          });
+
+            
+
+        },
+        keyup: function(e) {
+          
+           if (e.which === 13) $input.blur();
+
+        }
+    }).appendTo( $this.empty() ).focus();
+
+});
+
+ $('#others').on('click', function() {
+   var $this = $(this);
+    var others_value_text=$('#others_append_text').val();
+    var $input = $('<input >', {
+        value: $this.text(),
+        type: 'text',
+        style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+        blur: function() {
+           // $this.text(this.value);
+           o_value=0;
+           if(this.value!="")
+           {
+             o_value=this.value;
+           }
+
+            $.ajax({
+                            type: 'GET',
+                            contentType: 'application/json',
+                            url: '/master/edit_quartspints/',
+                            data:{'others_value':o_value,'qp_id':$('#quart_id').val(),'get_val':$('#others_name').val()},
+                            
+                            success: function(response) {
+                              console.log(response)
+                              $('#others_value_text').val(response.project_total_units);
+                              $('#others').text(response.project_total_units);
+                                // window.location.reload();
+                                // table.ajax.reload(null,false);
+                                // $('#units_detail').DataTable().ajax.reload(null,false);
+                            }
+                          });
+
+        },
+        keyup: function(e) {
+          console.log(e)
+         
+
+           if (e.which === 13) $input.blur();
+
+        }
+    }).appendTo( $this.empty() ).focus();
+
+});
+
+ $(document).ready(function() {
+
+
+// var editor = new $.fn.dataTable.Editor( {
+//               ajax:{
+
+//                     edit: {
+//                             type: 'GET',
+//                             contentType: 'application/json',
+//                             url: '/master/edit_master/',
+//                             data: function (d) {
+//                                var newdata ={};
+//                                 var ids= '';
+//                                  var clicked_label= '';
+//                                    var clicked_value= '';
+
+//                                $.each(d.data, function (key, value) {
+//                                 ids= key;
+
+//                                      $.each(value, function (key1, value1) {
+
+//                                         clicked_label= key1;
+//                                         clicked_value= value1;
+                                    
+//                                         }); 
+
+//                                });
+
+//                                newdata=({'id':ids,'clicked_label':clicked_label,"clicked_value":clicked_value});
+
+//                                console.log(newdata);
+
+//                                return newdata;
+//                             },
+//                             success: function(response) {
+//                                 // window.location.reload();
+//                                 // table.ajax.reload(null,false);
+//                                 $('#units_detail').DataTable().ajax.reload(null,false);
+//                             }
+                            
+//                         },
+
+
+//                         },
+
+//         table: "#units_detail",
+//         idSrc:  'id',
+ 
+//         type: 'POST',
+//          data: function ( d ) {
+//                               d.dirId =  "id";
+//         },
+          
+        
+          
+//         fields: [ 
+//             {
+//                 label: "project units",
+//                 name: "project_units"
+//             }
+            
+//         ]
+
+//     } );
+
+//         // Activate an inline edit on click of a table cell
+//   $('#units_detail').on( 'click', 'tbody td:not(first-child)', function (e) {
+//         editor.inline( this, {
+//             onBlur: 'submit'
+//         } );
+//     } );
+
+            var table = $('#units_detail').DataTable( {
+                  "ajax": {
+                        "url": "/master/ajax_popup_unit_details/",
+                        "type": "POST",
+                        "data":{"m_id":$('#master_id').val()}
+                    },
+                 
+                   dom: 'Bfrtip',
+                   paging:  false,
+                   searching:false,
+                   bInfo : false,
+                    columns: [
+                        
+                        { data: 'project_size' },
+                        { data: 'project_units' },
+                        
+                        // { data: 'project_total_units' },
+                        // { data: 'project_new' },
+                        
+                        // { data: 'project_total_gallons' },
+                        // { data: 'project_cost_gallon' },
+                        // { data: 'project_cost_unit' },
+
+                    ],
+                     
+                     "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        $('td:eq(1)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(1)', nRow).addClass('units');
+                },
+
+
+                  });
+
+
+ var lab_arr = []; //Assign array
+
+$('#units_detail tbody').on( 'click', '.units', function () {
+    
+    // alert('hi');
+    var rowIdx = table.cell( this ).index().row;
+    var columnIdx = table.cell( this ).index().columnVisible
+    //alert(rowIdx);
+    // var dummy_temp_labor_field_value =  $('#temp_labor_field_'+rowIdx+'_0').val();
+
+    var master_units_value= $('#master_units_'+rowIdx+'_1').val();
+    var temp_master_id_value= $('#master_id_'+rowIdx+'_1').val();
+    var master_units_field_value= $('#master_units_field_'+rowIdx+'_1').val();
+        
+    // console.log(temp_master_id_value);
+     if(typeof master_units_value === 'undefined')
+     {
+     // console.log(lab_arr);console.log("=====TEST====");
+     master_units_value= lab_arr[0].master_units_value_arr;
+      temp_master_id_value= lab_arr[0].temp_master_id_value_arr;
+      master_units_field_value= lab_arr[0].master_units_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(master_units_field_value !== 'undefined') 
+      {
+                  lab_arr = [];                         //Assign array empty then push
+                    lab_arr.push({'master_units_value_arr':master_units_value,
+                      'temp_master_id_value_arr':temp_master_id_value,
+                      'master_units_field_value_arr':master_units_field_value})
+           console.log(temp_master_id_value);
+
+                       var master_units_value=master_units_value;
+                        var $input = $('<input >', {
+                            value: master_units_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'l_temp',
+
+                            blur: function() {
+                                  // alert(e);
+                                  master_units_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_master" %}',
+                                                      data:{"id": temp_master_id_value,
+                                                              "clicked_label": master_units_field_value,
+                                                              "clicked_value": master_units_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload();
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $input.blur();
+
+                            },
+          }).appendTo( $this.empty() ).focus();
+
+      }
+
+  });
+
+
+
+
+
+});
+
+</script>

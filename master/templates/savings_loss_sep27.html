@@ -1,0 +1,688 @@
+ {% extends 'gdb_header.html' %}
+    {% load static %}
+
+{% block body%}
+
+
+  <style type="text/css">
+  .from-date-sav-los-m{
+    border: transparent;
+    /*border-bottom: 1px solid #999;*/
+    transition: border 0.5s ease;
+    padding: 0 12px;
+    padding-bottom: 4px;
+    /*margin: 0 20px;*/
+}
+.sav-loss-ytd-m {
+    /*margin-right: 10px;*/
+}</style>
+
+ <section class="content">
+                                    
+
+        <div class="container-fluid">
+
+            <div class="block-header">
+                <!-- <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2> -->
+            </div>
+
+               <div id="unitModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body" id="unit_detail_view">
+       
+                  
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+   
+
+
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>PROJECT SAVINGS & LOSS</strong>
+                            </h2>
+                           <!--  <br><br> -->
+                            
+                  
+                        </div>
+
+                <!--         {% for pl in pl_net %}
+                        {{pl.pl_units}}
+                        {% endfor %} -->
+                        <div class="body">
+                          <div class="date-input-m" style="margin-left:20px;">
+                              <tr>
+                                <strong class="sav-loss-ytd-m" > 
+                                <td >Year-to-Date Report:</td></strong>
+                                 <!-- <a class="btn btn-primary" id="From_date" >From</a> -->
+
+                                 <span class="from-date-sav-los-m">         
+                                 {{project_min_date}}</span>-<span class="from-date-sav-los-m">
+                                 {{project_max_date}}
+                               </span>
+                                 <!-- <a class="btn btn-primary" id="To_date" >To</a> -->
+                             
+                                <td id="leap_error" class="error"></td>
+                              </tr>
+    
+                             </div>
+                            <div class="table-responsive">
+                                <table id= "summary" class="table datatable custom-table table-striped table-bordered table-hover select-all "  > 
+                                    <thead>
+                                    <tr>
+                                     <!-- <th>Project Date</th> -->
+                                    <th>List of Projects</th>
+                                    <th>Labor</th>
+                                     <th>Units</th>
+                                      <th>Gallons</th>
+                                       <th>CPU</th>
+                                    <th>CPG</th>
+                                    <th>2018 Target</th>
+                                     <th>Target</th>
+                                     <th>P&L</th>
+                                      <th>Pl_color</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                    <tfoot>                                    
+                                     <tr>
+                                    <th colspan="8" style="text-align:right"> Total :</th>
+                                    <th></th>
+                                    </tr>
+             
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="project_details" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header unit_detail_popup">
+           <button type="button" class="close" data-dismiss="modal" style = 'margin-top:8px;padding-right:12px;'>&times;</button>
+        <h4 class="modal-title" style="background-color:#2196F3;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    text-align: left;">PROJECT DETAILS</h4>
+      </div>
+      <div class="modal-body" id="import_detail_view">
+        <div class="row">
+                <div class="body col-xs-12">
+                  <input type="hidden" name="project_id" id="pop_project_id">
+                  <input type="hidden" name="pop_project_name" id="pop_project_name">
+                  <div class="start-m align-m col-sm-4 col-xs-12">
+                    <p>Start Date:</p>
+                      <input name="min" class="border-bottom-input-m" id="min" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                    </div>                      
+                   <div class="end-m  align-m col-sm-4 col-xs-12" >
+                      <p>End Date:</p>
+                      <input name="max" class="border-bottom-input-m" id="max" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                   </div>
+                   <div class="align-m date-selector-m col-sm-4 col-xs-12"> 
+                    <a class="btn btn-primary" id="search_filter" >Search</a>
+                    <a class="btn btn-primary" id="reset-date" >Reset</a>                    
+                  </div>
+                </div>
+              </div>
+          <table id= "example" class="table table-striped table-bordered nowrap responsive-table"  style="width:100%" > 
+            <thead>             
+            <tr>                
+                <th>Date</th>
+                <th>Project Name</th>                                     
+                <th>Labor cost ($)</th>
+
+                <th>Units</th>
+
+
+                <th>Gallons Done</th>
+
+
+                <th>CPU ($)</th>
+                <th>CPG ($)</th>
+            </tr>
+             <tr id="total_row">                
+                 <th  colspan="2" style="text-align:center;"> TOTAL</th>
+                <th  id="lab_cost"></th>
+                <th  id="p_units"></th>
+                <th  id="p_gall_done"></th>        
+                <th  id="p_cpu"></th>
+                <th  id="p_cpg"></th>
+            </tr>
+            </thead>
+            <tbody id="table_body">               
+            </tbody>            
+             <tfoot style="display: none;"> 
+              <tr>
+                <th colspan="2" style="text-align:right"> Total :</th>
+                <th></th>
+                <th></th>
+                <th></th>                
+                <th></th>
+                <th></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>    
+    </div>
+  </div>
+</div>
+
+       {% include "gdb_footer.html" %}
+    <script type="text/javascript">
+
+var editor;
+    
+
+ $(document).ready(function() {
+
+      var view_table = $("#example").DataTable({"bLengthChange": false,"searching": false,dom: 'Bfrtip',
+  //       "buttons": [{
+  // extend: 'csv',
+  // className: 'exportButton',
+  // text: 'Export',footer: true}],
+
+            "buttons": [{
+            extend: 'csv',
+            filename:function(){
+              months = {'01':'January','02':'February', '03':'March' , '04':'April','05':'May','06':'June','07':'July','08':'August','09':'September','10':'October','11':'November','12':'December' };
+                var min  = '';
+                var max  = '';
+                var name = '';
+                f_name_mindate = ''
+                f_name_maxdate = ''
+                var min  = $("#min").val();
+                split = min.split('/');
+                f_name_mindate = split[1]+months[split[0]]+split[2]
+                var max  = $("#max").val();
+                split = max.split('/');
+                f_name_maxdate = split[1]+months[split[0]]+split[2]
+                var name = $("#pop_project_name").val();
+                if(min !='' && max != '')
+                {
+                  return name+'_report_'+f_name_mindate+' to '+f_name_maxdate;  
+                }
+                else if(min!='')
+                {
+                  return name+'_report'+f_name_mindate;
+                }
+                else if(max !='')
+                {
+                  return name+'_report'+f_name_maxdate; 
+                }
+                else
+                {
+                  return name+'_report';  
+                }
+                
+            },
+            className: 'exportButton',
+            text: 'Export',
+            footer: true,
+            buttons: [{ extend:'copy',                        
+                        exportOptions: {
+                          modifier: {
+                            page: 'all',
+                            search: 'none'   
+                          }
+                       },
+                       //the remaining buttons here 
+              }]
+          }],
+          render: $.fn.dataTable.render.number( ',', '.', 5, '$' ), 
+  //          drawCallback: function() {
+  //   var hasRows = this.api().rows().data().length > 0;
+  //   alert(hasRows)
+  // },
+        "footerCallback": function ( row, data, start, end, display ) {
+            var api = this.api(), data;
+ 
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+
+            // Total over all pages
+            total = api
+                .column( 2 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+                // alert(total);
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 2, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+            $( api.column(2).footer() ).html('$'+pageTotal);
+            $("#lab_cost").html('$'+pageTotal);
+ 
+            // Total over all pages
+            total = api
+                .column( 3 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+                // alert(total);
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 3, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+
+            $( api.column(3).footer() ).html(pageTotal);
+            $("#p_units").html(pageTotal);
+
+            // Total over all pages
+            total = api
+                .column( 4 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+                // alert(total);
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 4, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );                
+ 
+            // Update footer
+            $( api.column( 4 ).footer() ).html(pageTotal);
+            $("#p_gall_done").html(pageTotal);
+
+            var columnData = api.column( 5 ).data();
+            var theColumnTotal = columnData.reduce( function (a, b) {
+                                                  if(isNaN(a)){
+                                                      return '';
+                                                  } else {
+                                                      a = parseFloat(a);
+                                                  }
+                                                  if(isNaN(b)){
+                                                      return '';
+                                                  } else {
+                                                      b = parseFloat(b);
+                                                  }
+                                                  return (a + b); }, 0 );
+            var avg = theColumnTotal / columnData.count();
+            if(avg){
+            $( api.column( 5 ).footer() ).html('$'+avg.toFixed(2)); 
+            $("#p_cpu").html('$'+avg.toFixed(2));
+            }
+            else
+            {
+            $( api.column( 5 ).footer() ).html('$'+0.00); 
+             $("#p_cpu").html('$'+0.00); 
+            }
+
+            
+
+            var columnData = api.column( 6 ).data();
+            var theColumnTotal = columnData.reduce( function (a, b) {
+                                                  if(isNaN(a)){
+                                                      return '';
+                                                  } else {
+                                                      a = parseFloat(a);
+                                                  }
+                                                  if(isNaN(b)){
+                                                      return '';
+                                                  } else {
+                                                      b = parseFloat(b);
+                                                  }
+                                                  return (a + b); }, 0 );
+            var avg = theColumnTotal / columnData.count();
+            if(avg){
+            
+            $( api.column( 6 ).footer() ).html('$'+avg.toFixed(2)); 
+            $("#p_cpg").html('$'+avg.toFixed(2));
+          }
+          else
+          {
+            $( api.column( 6 ).footer() ).html(0.00);
+            $("#p_cpg").html('$'+0.00); 
+          }
+        }
+      });
+
+  $(document).on("click", "a.view_project_details" , function(e) {
+        e.preventDefault();
+        id = $(this).data('project');
+        title = $(this).text();        
+        $("#pop_project_id").val(id);
+        $('#min').val("").datepicker({showWeek: true,firstDay: 1});
+        $('#max').val("").datepicker({showWeek: true,firstDay: 1});
+        $.ajax({
+               url: '/master/view_details/',
+               type: 'POST',
+               data: {'project_id':id},
+               dataType:"JSON",
+               success: function(response)
+               {
+                  if(response.data == '')
+                  {
+                    view_table.buttons().disable();
+                    $("#total_row").hide();
+                  }
+                  else
+                  {
+                   view_table.buttons().enable(); 
+                   $("#total_row").show();
+                  }
+                  console.log(response.data)
+                  var rows = view_table.rows().remove().draw();                  
+                    
+                    $.each(response.data, function(key, formarray) {
+                      view_table.row.add([formarray.project_date,formarray.project_name,formarray.project_total_labor_cost,formarray.unit_done_count,formarray.gallon_done_count,formarray.master_cost_unit_count.toFixed(2),formarray.master_cost_gallon_count.toFixed(2)]).draw(false);
+                    });
+                    view_table.draw()
+                    $("#pop_project_name").val(title);
+                    $("#project_details").modal("show");
+               }
+             });
+        });
+
+  $("#min").datepicker({
+      format: "mm/dd/yyyy",      
+      autoclose: true,      
+    }).on('changeDate', function(selected) {      
+      var minDate = new Date(selected.date.valueOf());
+      $('#max').datepicker('setStartDate', minDate);
+    });
+ 
+  // $("#min").datepicker({ onSelect: function () { alert('hi');table.draw(); }, changeMonth: true, changeYear: true });
+  $("#max").datepicker({
+    format: "mm/dd/yyyy",      
+    autoclose: true,      
+    }).on('changeDate', function (selected){
+            var maxDate = new Date(selected.date.valueOf());
+            $('#min').datepicker('setEndDate', maxDate);
+    });
+
+    $("#search_filter").on('click',function()
+    {
+      var service_date     = $("#min").val();
+      var service_end_date = $("#max").val();
+      
+      if(service_date!=''||service_end_date!='')
+      {
+          $.ajax({
+               url: '/master/view_details/',
+               type: 'POST',
+               data: {'project_id':id,'min':$("#min").val(),'max':$("#max").val()},
+               dataType:"JSON",
+               success: function(response)
+               {
+                  if(response.data == '')
+                  {
+                    view_table.buttons().disable();
+                    $("#total_row").hide();
+                  }
+                  else
+                  {
+                   view_table.buttons().enable(); 
+                   $("#total_row").show();
+                  }
+                  var rows = view_table.rows().remove().draw();
+                  $.each(response.data, function(key, formarray) {
+                    view_table.row.add([formarray.project_date,formarray.project_name,formarray.project_total_labor_cost,formarray.unit_done_count,formarray.gallon_done_count,formarray.master_cost_unit_count.toFixed(2),formarray.master_cost_gallon_count.toFixed(2)]).draw(false);
+                  });
+                  view_table.draw()
+               }
+             });
+      }      
+    });
+
+$("#reset-date").click(function(){
+    $('#min').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    $('#max').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    send_ajax();
+});
+
+function send_ajax()
+{
+  id = $("#pop_project_id").val();
+        $.ajax({
+               url: '/master/view_details/',
+               type: 'POST',
+               data: {'project_id':id},
+               dataType:"JSON",
+               success: function(response)
+               {
+                  if(response.data == '')
+                  {
+                    view_table.buttons().disable();
+                    $("#total_row").hide();
+                  }
+                  else
+                  {
+                   view_table.buttons().enable(); 
+                   $("#total_row").show();
+                  }
+                  var rows = view_table.rows().remove().draw();
+                  $.each(response.data, function(key, formarray) {
+                    view_table.row.add([formarray.project_date,formarray.project_name,formarray.project_total_labor_cost,formarray.unit_done_count,formarray.gallon_done_count,formarray.master_cost_unit_count.toFixed(2),formarray.master_cost_gallon_count.toFixed(2)]).draw(false);
+                  });
+                  view_table.draw()
+               }
+             });
+}
+
+var table = $('#summary').DataTable( {
+
+      ajax: '/master/savings_loss_list/',
+      dom: 'Bfrtip',
+      // pageLength: 10,
+      stateSave: true,
+        columns: [
+            
+          
+          { data: 'project_name' },
+          { data: 'master_total_labor_cost',render: $.fn.dataTable.render.number( '', '.', 2,'$' )},
+           { data: 'unit_done_count'},
+            { data: 'gallon_done_count'},
+            
+            { data: 'master_cost_per_unit',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            { data: 'master_cost_per_gallon',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            { data:'last_year'},
+            {data:'summary_target',render: $.fn.dataTable.render.number( ',', '.', 2,'$' )},
+            {data: 'pl'  },
+            {data: 'pl_color'}, 
+
+        ],
+        "buttons": [],
+           "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                       
+                        $('td:eq(6)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(6)', nRow).addClass('last_year');
+                },
+       "footerCallback": function( tfoot, data, start, end, display ) {
+//         var api = this.api();
+//         $( api.column( 8 ).footer() ).html(
+//         api.column( 9 ).data().reduce( function ( a, b ) {
+//         return a + b;
+//         }, 0 )
+// );
+
+
+var api = this.api(), data;
+ 
+            // Remove the formatting to get integer data for summation
+            var intVal = function ( i ) {
+                return typeof i === 'string' ?
+                    i.replace(/[\$,]/g, '')*1 :
+                    typeof i === 'number' ?
+                        i : 0;
+            };
+ 
+            // Total over all pages
+            total = api
+                .column( 9 )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Total over this page
+            pageTotal = api
+                .column( 9, { page: 'current'} )
+                .data()
+                .reduce( function (a, b) {
+                    return intVal(a) + intVal(b);
+                }, 0 );
+ 
+            // Update footer
+            $( api.column( 8 ).footer() ).html(
+                '$'+parseFloat(pageTotal).toFixed(2) +' (  $'+ parseFloat(total).toFixed(2) +')'
+            );
+        }
+
+
+
+        // 'fnrowCallback': function(row, data, index){
+        //   consloe.log(data);
+    // if(data[7]< 0){
+    //     $(row).find('td:eq(7)').css('color', 'red');
+    // }
+    // if(data[7]> 0){
+    //     $(row).find('td:eq(7)').css('color', 'blue');
+    // }
+  // },
+// "createdRow": function( row, data, dataIndex ) {
+//              if ( data[7] > $0.00 ) {        
+//          $(row).find('td:eq(2)').css('color', 'red');
+     
+//        }
+      
+
+//     },
+
+
+
+
+      });
+
+
+ table.column( 9 ).visible( false ); 
+
+$('#summary tbody').on( 'click', '.last_year', function () {
+    
+    // alert('hi');
+    var rowIdx = table.cell( this ).index().row;
+    var columnIdx = table.cell( this ).index().columnVisible
+    //alert(rowIdx);
+    // var dummy_temp_labor_field_value =  $('#temp_labor_field_'+rowIdx+'_0').val();
+
+    var temp_labor_value= $('#last_year_'+rowIdx+'_1').val();
+    var temp_master_id_value= $('#master_id_'+rowIdx+'_1').val();
+    var temp_labor_field_value= $('#last_year_field_'+rowIdx+'_1').val();
+        
+    console.log(temp_master_id_value);
+     if(typeof temp_labor_value === 'undefined')
+     {
+     console.log(lab_arr);console.log("=====TEST====");
+     temp_labor_value= lab_arr[0].temp_labor_value_arr;
+      temp_master_id_value= lab_arr[0].temp_master_id_value_arr;
+      temp_labor_field_value= lab_arr[0].temp_labor_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(temp_labor_field_value !== 'undefined') 
+      {
+                  lab_arr = [];                         //Assign array empty then push
+                    lab_arr.push({'temp_labor_value_arr':temp_labor_value,
+                      'temp_master_id_value_arr':temp_master_id_value,
+                      'temp_labor_field_value_arr':temp_labor_field_value})
+           
+
+                       var temp_labor_value=temp_labor_value;
+                        var $input = $('<input >', {
+                            value: temp_labor_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'l_temp',
+                            class:'numinput',
+
+                            blur: function() {
+                                  // alert(e);
+                                  temp_labor_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_master_last_year" %}',
+                                                      data:{"id": temp_master_id_value,
+                                                              "clicked_label": temp_labor_field_value,
+                                                              "clicked_value": temp_labor_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload();
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $input.blur();
+
+                            },
+          }).appendTo( $this.empty() ).focus();
+
+      }
+
+  });
+});
+    </script>
+
+{% endblock %}

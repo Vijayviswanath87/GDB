@@ -1,0 +1,100 @@
+    {% load static %}
+	 <link href="{% static 'css/materialize.css' %}" rel="stylesheet">
+
+
+<form>
+  <div class="input-group">
+                        <span class="input-group-addon">
+                            Temp labor hrs:
+                        </span>
+                        <div class="form-line">
+                 <input type="text" class="form-control" id="temp_hrs" name="temp_hrs" required autofocus value="{{instance.project_tmp_labor_hrs}}">
+    </div>  
+
+</div>
+
+  <div class="input-group">
+                        <span class="input-group-addon">
+                            GDB labor hrs:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="gdb_hrs" name="gdb_hrs" required autofocus value="{{instance.project_gdb_labor_hrs}}">
+    </div>  
+
+</div>
+
+  <div class="input-group">
+                        <span class="input-group-addon">
+                            Project size:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="project_size" name="project_size" required autofocus value="{{instance.project_size}}">
+    </div>  
+
+</div>
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            Unit Type:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="unit_type" name="unit_type" required autofocus value="{{instance.project_unit_type}}"> 
+    </div>  
+
+</div>
+
+
+
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            Total Units:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="total_units" name="total_units" readonly="true" required autofocus value="{{instance.project_total_units}}">
+    </div>  
+
+</div>
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            Total Gallons:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="total_gallon" name="total_gallon" readonly="true" required autofocus value="{{instance.project_total_gallons}}">
+    </div>  
+
+</div>
+
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            Cost /Unit:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="cost_unit" name="cost_unit" readonly="true" required autofocus value="{{instance.project_cost_unit}}">
+    </div>  
+
+</div>
+
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            Cost /Gallon:
+                        </span>
+                        <div class="form-line">
+                            <input type="text" class="form-control" id="cost_gallon" name="cost_gallon" readonly="true" required autofocus value="{{instance.project_cost_gallon}}">
+    </div>  
+
+</div>
+
+
+<div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="submit" name="submit" value="save">
+                        </span>
+  
+
+</div>
+
+</form>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>GDB</title>
+    <!-- Favicon-->
+    <link rel="icon" href="{% static 'images/fav.ico' %}" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="{% static 'plugins/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{% static 'plugins/node-waves/waves.css' %}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{% static 'plugins/animate-css/animate.css' %}" rel="stylesheet" />
+
+    <!-- data table edit Css -->
+    <link href="{% static 'css/editor.dataTables.min.css' %}" rel="stylesheet" />
+
+
+
+
+    <!-- Custom Css -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+   
+    
+    
+    <!-- Materialize Css -->
+    {% if request.user.is_authenticated %}
+        <link href="{% static 'plugins/bootstrap-datatable/css/bootstrap-editable.css' %}" rel="stylesheet">
+    <link href="{% static 'plugins/bootstrap-datatable/css/bootstrap-table.min.css' %}" rel="stylesheet">
+<link href="{% static 'plugins/bootstrap-datatable/sticky-header/bootstrap-table-sticky-header.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/theme-blue.css' %}" rel="stylesheet" />
+{% else %}
+     <link href="{% static 'css/materialize.css' %}" rel="stylesheet">
+         {% endif %}
+</head>
+{% if request.user.is_authenticated %}
+ <div class="block" style="display:none;"  id="loader"><div class="lds-ripple"><h3>Loading</h3><div></div><div></div></div></div>
+<body class="theme-blue horizontal">
+     <header>
+            <nav class="navbar">
+                <div class="navbar-header logo-sec-m-nav"> 
+                    <a class="navbar-brand" href="{%url 'summary' %}">
+                         <img src="{% static 'images/GDB_image_original.png' %}" alt="main logo" class="main-logo" style='margin-bottom:20px;'>
+                    </a>
+                    <h4 class="title-logo-m">GDB International</h4>
+                    <p class="sub-title-logo-m"> Labor Report - WHSE19</p>  
+                </div>
+ <div class="navbar-header">   
+                   
+                </div>
+
+                <ul class="list-inline float-right mb-0">
+                <!-- User-->
+                <li class="list-inline-item dropdown notification-list">
+                    <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="{% static 'images/user.png' %}" alt="user" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                       <!--  <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-cog"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="{% url 'logout' %}"><i class="material-icons">arrow_drop_up</i> Logout</a>
+                    </div>
+                </li>
+                <li class="menu-item list-inline-item">
+                    <!-- Mobile menu toggle-->
+                        <a href="javascript:void(0);" class="navbar-toggle bars nav-link"  data-toggle="collapse" data-target="#navigation">
+                        <div class="lines"></div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </li>
+            </ul>
+                <!-- <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navigationmobile">
+                 
+                        <ul class="navigation-menu">
+                            <li class="has-submenu">
+                                <a href="index.html"><i class="ti-home"></i>Home</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-light-bulb"></i>Form Elements</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="#">Element 1</a></li>
+                                            <li><a href="#">Element 2</a></li>
+                                            <li><a href="#">Element 3</a></li>
+                                            <li><a href="#">Element 4</a></li>
+                                            <li><a href="#">Element 5</a></li>
+                                            <li><a href="#">Element 6</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-crown"></i>Date Table</a>
+                                <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Table 4</a></li>
+                                    <li><a href="advanced-alertify.html">Table 5</a></li>
+                                    <li><a href="advanced-rangeslider.html">Table 6</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-bookmark"></i>Bootstrap Date Table</a>
+                                <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Bootstrap Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Bootstrap Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Bootstrap Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Bootstrap Table 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="bootstrap-datatable-fixed-header.html"><i class="ti-bookmark-alt"></i>Date Table Fixed header</a>
+                            </li>
+                             <li class="has-submenu">
+                                <a href="sign-in.html"><i class="ti-home"></i>Sign In</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="sign-up.html"><i class="ti-home"></i>Sign Up</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="forgot-password.html"><i class="ti-home"></i>Forgot Password</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div> -->
+            </nav>
+        </header>
+
+        <nav class="navbar-menu">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">   
+                <div id="navigation" class="active">
+                    <div class="collapse navbar-collapse" id="navigationmobile">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li {% if request.path == '/master/dashboard/' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                                <a href="{%url 'dashboard' %}">{% if request.path == '/master/dashboard/' %}<b>Dashboard</b>{% else %}Dashboard{% endif %}</a>
+                            </li>
+
+                            <li {% if request.path == '/master/summary/' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                               <a  href="{%url 'summary' %}"> {% if request.path == '/master/summary/' %}<b>Everyday Summary</b>{% else %}Everyday Summary{% endif %}</a>
+                            </li>
+
+                           
+
+
+<li {% if request.path == '/master/index' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                           
+                                <a href="{%url 'index' %}">{% if request.path == '/master/index' %}<b>Master</b>{% else %}Master{% endif %}</a>
+                                
+                            </li>
+
+
+                           
+                              <li {% if request.path == '/labor/listing' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                                <a href="{%url 'listing' %}">{% if request.path == '/labor/listing' %}<b>Labor</b>{% else %}Labor{% endif %}</a>
+                            </li>
+
+ <li {% if request.path == '/master/savings_loss/' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                                <a href="{%url 'savings_loss' %}">{% if request.path == '/master/savings_loss/' %} <b>Project Savings & Loss</b>{% else %}Project Savings & Loss{% endif %}</a>
+                            </li>
+                                <li {% if request.path == '/target/' %}  class="has-submenu active"  {% else %} class="has-submenu"{% endif %}>
+                                <a href="{%url 'target' %}">{% if request.path == '/target/' %}<b>Target</b>{% else %}Target{% endif %}</a>
+                            </li>
+                          <!--  <li class="has-submenu">
+                                <a href="sign-up.html">Sign Up</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="forgot-password.html">Forgot Password</a>
+                            </li> -->
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </nav>
+    {% else %}
+<body class="login-page">
+{% endif %}
+
+
+{% block body %}
+{% endblock %}
+
+<script type="text/javascript">
+
+$('body').on('click','.has-submenu',function() {
+
+
+  // $(".has-submenu").addClass("has-submenu active");
+
+
+ });
+</script>

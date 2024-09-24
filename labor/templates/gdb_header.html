@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>GDB</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- #Customly added links -->
+    <link href="jquery.fulltable.css" rel="stylesheet"/>
+    <!-- #Customly added links -->
+    <link href="style.css" rel="stylesheet"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    <link href="{% static 'plugins/jquery.dataTables.css' %}" rel="stylesheet"> <!-- #Customly added link -->
+    <link href="{% static 'plugins/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="{% static 'plugins/node-waves/waves.css' %}" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="{% static 'plugins/animate-css/animate.css' %}" rel="stylesheet" />
+
+    <!-- data table edit Css -->
+    <link href="{% static 'css/editor.dataTables.min.css' %}" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+    
+	
+	<!-- Materialize Css -->
+    {% if request.user.is_authenticated %}
+        <link href="{% static 'plugins/bootstrap-datatable/css/bootstrap-editable.css' %}" rel="stylesheet">
+    <link href="{% static 'plugins/bootstrap-datatable/css/bootstrap-table.min.css' %}" rel="stylesheet">
+<link href="{% static 'plugins/bootstrap-datatable/sticky-header/bootstrap-table-sticky-header.css' %}"rel="stylesheet">
+        <link href="{% static 'css/theme-blue.css' %}" rel="stylesheet" />
+{% else %}
+	 <link href="{% static 'css/materialize.css' %}" rel="stylesheet">
+         {% endif %}
+</head>
+{% if request.user.is_authenticated %}
+<body class="theme-blue horizontal">
+     <header>
+            <nav class="navbar">
+                <div class="navbar-header">   
+                    <a class="navbar-brand" href="index.html">ADMIN THEME</a>
+                </div>
+                <ul class="list-inline float-right mb-0">
+                <!-- User-->
+                <li class="list-inline-item dropdown notification-list">
+                    <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="{% static 'images/user.png' %}" alt="user" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                       <!--  <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-cog"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a>
+                    </div>
+                </li>
+                <li class="menu-item list-inline-item">
+                    <!-- Mobile menu toggle-->
+                        <a href="javascript:void(0);" class="navbar-toggle bars nav-link"  data-toggle="collapse" data-target="#navigationmobile">
+                        <div class="lines"></div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </li>
+            </ul>
+                <!-- <div class="navbar-custom">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navigationmobile">
+                 
+                        <ul class="navigation-menu">
+                            <li class="has-submenu">
+                                <a href="index.html"><i class="ti-home"></i>Home</a>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-light-bulb"></i>Form Elements</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="#">Element 1</a></li>
+                                            <li><a href="#">Element 2</a></li>
+                                            <li><a href="#">Element 3</a></li>
+                                            <li><a href="#">Element 4</a></li>
+                                            <li><a href="#">Element 5</a></li>
+                                            <li><a href="#">Element 6</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-crown"></i>Date Table</a>
+                                <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Table 4</a></li>
+                                    <li><a href="advanced-alertify.html">Table 5</a></li>
+                                    <li><a href="advanced-rangeslider.html">Table 6</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-submenu">
+                                <a href="#"><i class="ti-bookmark"></i>Bootstrap Date Table</a>
+                                <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Bootstrap Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Bootstrap Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Bootstrap Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Bootstrap Table 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="bootstrap-datatable-fixed-header.html"><i class="ti-bookmark-alt"></i>Date Table Fixed header</a>
+                            </li>
+                             <li class="has-submenu">
+                                <a href="sign-in.html"><i class="ti-home"></i>Sign In</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="sign-up.html"><i class="ti-home"></i>Sign Up</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="forgot-password.html"><i class="ti-home"></i>Forgot Password</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div> -->
+            </nav>
+        </header>
+
+        <nav class="navbar-menu">
+        <div class="container-fluid">
+            <div class="navbar-header">   
+                <div id="navigation" class="active">
+                        <!-- Navigation Menu-->
+                        <ul class="navigation-menu">
+                            <li class="has-submenu">
+                                <a href="index.html">Everyday Summary</a>
+                            </li>
+
+                            <!-- <li class="has-submenu">
+                                <a href="form-elements.html">Form Elements</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <ul>
+                                            <li><a href="#">Element 1</a></li>
+                                            <li><a href="#">Element 2</a></li>
+                                            <li><a href="#">Element 3</a></li>
+                                            <li><a href="#">Element 4</a></li>
+                                            <li><a href="#">Element 5</a></li>
+                                            <li><a href="#">Element 6</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li> -->
+
+                           <!--  <li class="has-submenu">
+                                <a href="datatable.html">Date Table</a>
+                                <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Table 4</a></li>
+                                    <li><a href="advanced-alertify.html">Table 5</a></li>
+                                    <li><a href="advanced-rangeslider.html">Table 6</a></li>
+                                </ul>
+                            </li> -->
+
+                            <li class="has-submenu inactive">
+                                <a href="bootstrap-datatable.html">Master</a>
+                                <!-- <ul class="submenu">
+                                    <li><a href="advanced-animation.html">Bootstrap Table 1</a></li>
+                                    <li><a href="advanced-highlight.html">Bootstrap Table 2</a></li>
+                                    <li><a href="advanced-rating.html">Bootstrap Table 3</a></li>
+                                    <li><a href="advanced-nestable.html">Bootstrap Table 4</a></li>
+                                </ul> -->
+                            </li>
+
+
+                            <li class="has-submenu inactive">
+                                <a href="">Labor</a>
+
+                            </li>
+
+
+
+                            <li class="has-submenu active">
+                                <a href="target.html">Target</a>
+
+                            </li>
+                         <!--     <li class="has-submenu">
+                                <a href="sign-in.html">Sign In</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="sign-up.html">Sign Up</a>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="forgot-password.html">Forgot Password</a>
+                            </li> -->
+                        </ul>
+                        <!-- End navigation menu -->
+                    </div>
+            </div>
+        </div>        
+    </nav>
+    {% else %}
+<body class="login-page">
+{% endif %}
+
+
+{% block body %}
+{% endblock %}

@@ -1,0 +1,790 @@
+{% extends 'gdb_header.html' %}
+<!-- #Customly added links -->
+    <link href="jquery.fulltable.css" rel="stylesheet"/>
+    <!-- #Customly added links -->
+    <link href="style.css" rel="stylesheet"/>
+    {% load static %}
+
+{% block body%}
+
+ <section class="content">
+        <div class="container-fluid">
+            <!-- <div class="block-header">
+                <h2>
+                    Bootstrap DATATABLES
+                    <small>Taken from <a href="https://bootstrap-table-examples.wenzhixin.net.cn/index.html" target="_blank">bootstrap-table-examples.wenzhixin.net.cn</a></small>
+                </h2>
+            </div> -->
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <strong>LABOR COST ANALYSIS</strong>
+                            </h2>
+                            <div id="importModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header unit_detail_popup">
+                    <button type="button" class="close" data-dismiss="modal" style = 'margin-top:8px;padding-right:12px;'>&times;</button>
+                      <h4 class="modal-title" style="background-color:#2196F3;
+                  padding-top: 5px;
+                  padding-bottom: 4px;
+                  text-align: left;">LABOR IMPORT</h4>
+                    </div>
+
+
+                    <div class="modal-body" id="import_detail_view">
+                        <div id="message_display" >
+                  <div class="bar" style="width: 0%;"><span id="percent"></span></div>
+              </div>
+                      <form method="post" enctype="multipart/form-data" action="{%url 'labor_import_data' %}" id="fileForm">
+                  {% csrf_token %}
+                  <div class="date-input-m">
+                  <input type="file" name="myfile" id="myfile" class="btn" data-file-types="csv">
+                </div>
+                 <div class="date-input-m">
+                  <button type="submit" class="btn btn-primary" >Upload</button>
+                   <button type="button" id="cancel_all" class="btn btn-danger" onclick="javascript:window.location.reload()">Cancel</button>
+                </div>
+                </form>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+                            <div id="unitModal" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title" style = 'background-color:#2196F3;padding-top: 10px;padding-bottom: 10px;padding-left:18px;text-align: left;'>LABOR IMPORT</h4>
+                                  </div>
+                                  <div class="modal-body" id="unit_detail_view">
+                                  </div>
+                                  <div class="modal-footer">                                  
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <span id="del_message"></span>
+                        <div class="body">
+                          <div class="date-input-m">
+                            <div class="start-m align-m col-md-4 col-xs-12">
+                              <p>Start Date:</p>
+                              <input name="min" class="border-bottom-input-m" id="min" type="text" readonly="readonly">
+                              <span id="leap_error" class="error"></span>
+                            </div>                      
+                            <div class="end-m  align-m col-md-4 col-xs-12" >
+                              <p>End Date:</p>
+                              <input name="max" class="border-bottom-input-m" id="max" type="text" readonly="readonly">
+                              <span id="leap_error" class="error"></span>
+                            </div>                 
+                            <div class="align-m date-selector-m col-md-4 col-xs-12"> 
+                              <a class="btn btn-primary" id="search_filter" >Search</a>
+                              <a class="btn btn-primary" id="reset-date" >Reset</a> |
+                              <a class="btn btn-primary import_view"
+                                          data-toggle="modal" data-target="#importModal"><img src="{% static "images/import.png" %}" width="16" height="15" /> <strong>Import</strong></a>
+                               <a class="btn btn-primary btn-report-color import_view" href="{% static 'sample_csv/Sample_Labor.csv' %}" download><strong>Sample CSV</strong></a>
+                            </div>
+                          </div>
+                          <div class="table-responsive">
+                            <input type="button" name="delete_record" id="delete_record" value="DELETE" class="btn btn-danger btn-marg-left-10">
+                            <input type="button" name="report_modal_pop" id="report_modal_pop" value="GENERATE REPORT" class="btn btn-report">
+                              <table class="table datatable custom-table table-striped table-bordered table-hover select-all " id="table_report" data-search="true" >
+                                    <thead>
+                                      <tr>
+                                          <th><input id="checkAll" type="checkbox"></th>
+                                          <th class="center" width="10%">DATE</th>
+                                          <th class="center" width="11%">NO OF TEMP</th>                            
+                                          <th class="center" width="10%">NO OF GDB</th>
+                                          <th class="center" width="11%">TEMP HOURS</th>
+                                          <th class="center" width="10%">GDB HOURS</th>
+                                          <th class="center" width="10%">TEMP COST</th>
+                                          <th class="center" width="10%">GDB COST</th>
+                                          <th class="center" width="11%">LABOR COST</th>
+                                          <th class="center" width="5%">PROFIT</th>
+                                          <th class="center" width="5%">LOSS</th>
+                                          <th class="center" width="25%">NET P & L</th>
+                                      </tr>
+                                    </thead>
+
+                                                
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+        </div>
+    </section>
+
+
+<div id="reportModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header unit_detail_popup">
+           <button type="button" class="close" data-dismiss="modal" style = 'margin-top:8px;padding-right:12px;'>&times;</button>
+        <h4 class="modal-title " style="background-color:#2196F3;padding-top: 5px;padding-bottom: 4px;text-align: left;">REPORT DETAILS</h4>
+      </div>
+      <div class="modal-body" id="import_detail_view">
+         <div id="message_display" >
+        <div class="row">
+                <div class="body col-xs-12">
+                  <input type="hidden" name="project_id" id="pop_project_id">
+                  <div class="start-m align-m col-md-4 col-xs-12">
+                    <p>Start Date:</p>
+                      <input name="report_min" class="border-bottom-input-m" id="report_min" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                    </div>                      
+                   <div class="end-m  align-m col-md-4 col-xs-12" >
+                      <p>End Date:</p>
+                      <input name="report_max" class="border-bottom-input-m" id="report_max" type="text" readonly="readonly">
+                      <span id="leap_error" class="error"></span>
+                   </div>
+                   <div class="align-m date-selector-m col-md-4 col-xs-12"> 
+                    <a class="btn btn-primary" id="report_search_filter" >Search</a>
+                    <a class="btn btn-primary" id="report_reset-date" >Reset</a>
+                  </div>
+                </div>
+              </div>
+          <table id= "report_result" class="table table-striped table-bordered nowrap responsive-table"  style="width:100%" > 
+            <thead>
+            <tr>                
+                <th class="center" width="10%">DATE</th>
+                <th class="center" width="11%">NO OF TEMP</th>                            
+                <th class="center" width="10%">NO OF GDB</th>
+                <th class="center" width="11%">TEMP HOURS</th>
+                <th class="center" width="10%">GDB HOURS</th>
+                <th class="center" width="10%">TEMP COST</th>
+                <th class="center" width="10%">GDB COST</th>
+                <th class="center" width="11%">LABOR COST</th>
+                <th class="center" width="5%">PROFIT</th>
+                <th class="center" width="5%">LOSS</th>
+                <th class="center" width="25%">NET P & L</th>
+            </tr>
+            </thead>
+            <tbody id="table_body">               
+            </tbody>                        
+          </table>
+      </div>    
+    </div>
+  </div>
+</div>
+       {% include "gdb_footer.html" %}
+
+    <script src="{% static 'js/nameinput.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css'%}">
+
+
+<script type="text/javascript">
+  $(function() 
+{
+    //$('fileForm').submit(upload);
+// $("#message_display").delay(4000).slideUp(500, function(){
+//     $("#message_display").slideUp(6000);
+// });
+
+    $('input[type=file]').on('change', prepareUpload);
+      
+      var files;
+
+      function prepareUpload(event)
+      {
+        files = event.target.files;
+      }
+
+      
+
+
+         var submit_file=$('#fileForm').submit(function() 
+                    {
+
+                      
+
+                        // event.preventDefault();
+                        var data = new FormData();
+                        data.append('data',$('input[type=file]')[0].files[0]);
+                        // var filetype = $('input[type=file]')[0].files[0].attr('data-file-types');
+
+                              // alert(document.getElementById("myfile").files[0].name);
+
+                            
+                            
+
+                            if($('#myfile').val()!=='')
+                            {
+                              uploaded_file_name=document.getElementById("myfile").files[0].name;
+                              var get_ext = uploaded_file_name.split('.');
+                              // get_ext = get_ext.reverse(); 
+                              // alert(get_ext[1]);
+                              if(get_ext[1]!=='csv')
+                              {
+                                $('#message_display').html('<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Uploaded file not in csv format</div>');
+                              }
+                              // else
+                              // {
+                              //   alert("hi");
+                              // }
+                            }
+                            else
+                            {
+                             $('#message_display').html('<div class="alert alert-warning"><a class="close" href="#" data-dismiss="alert">×</a>Please upload csv file format</div>');
+
+                        
+
+                    
+                            }
+                        $.ajax({
+                            
+                            url: '{%url "labor_import_data" %}',
+                            type: $(this).attr('method'),
+                            data: data,
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                           
+                            beforeSend: function(){
+                               $("#loader").show();
+                             },
+                             complete: function(){
+                               $("#loader").hide();
+                             },
+                            success: function(response) {
+                              // alert(response.display)
+                              if(response.display=="success")
+                              {
+                              return_message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>'+response.status+'</div>';
+
+                                // $('#message_display').html(return_message)
+                                 $('#message_display').html(return_message)
+                                setTimeout(function(){
+                                          $('#importModal').modal('hide')
+                                          location.reload();
+                                      }, 4000);
+                              }
+
+                              if(response.display=="fail")
+                              {
+                              return_message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>'+response.status+'</div>';
+
+                                $('#message_display').html(return_message)
+                              }
+
+
+                            }
+                        });
+                        return false;
+                    });
+
+
+ // $('#cancel_all').on('click',function(e){
+ 
+ //         document.getElementById("myfile").value = "";   
+ //  });
+
+
+});
+
+$('body').on('click','.view_upload',function() {
+
+
+  // m_id=$(this).attr('data-id');
+  // p_name=atob($(this).attr('data-projectname'));
+  // unit_type=atob($(this).attr('data-project-unit-type'));
+  
+ 
+  $.ajax
+  ({
+    url:"/labour/labor_import/",
+    method:"post",
+    data:{},
+    success:function(response)
+    {
+         // alert(response);
+      // $('#myModal_mailsend').modal('show');
+      $('#unit_detail_view').html(response);
+    }
+  });
+
+
+ });
+
+
+
+var editor; // use a global for the submit and return data rendering in the examples
+
+$(document).ready(function() {
+
+  var view_table = $("#report_result").DataTable({"bLengthChange": false,"searching": false,dom: 'Bfrtip',
+        buttons: [{
+  extend: 'csv',
+  className: 'exportButton',
+  text: 'Export',footer: true}]
+      });
+
+  $(document).on('click',"#report_modal_pop",function(){
+    $("#report_reset-date").trigger("click");
+    $("#report_result_wrapper").css('display','none');
+    $("#reportModal").modal("show");
+  });
+
+   $("#reset-date").click(function(){
+    $('#min').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    $('#max').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    // $('#max').val("").datepicker("update");
+    $('#table_report').DataTable().ajax.reload(null,false);
+})
+   $("#report_reset-date").click(function(){
+    $('#report_min').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    $('#report_max').val("").datepicker({
+      showWeek: true,
+      firstDay: 1
+    });
+    // $('#max').val("").datepicker("update");
+    $('#table_report').DataTable().ajax.reload(null,false);
+    var rows = view_table.rows().remove().draw();
+    $("#report_result_wrapper").css('display','none');
+})
+
+var today = new Date();
+var startDate = new Date(today.getFullYear(), 3, 1);
+var endDate = new Date(today.getFullYear(), 3, 31);
+
+  $("#min").datepicker({
+      format: "mm/dd/yyyy",      
+      autoclose: true,
+      startDate: startDate,
+   endDate: endDate      
+    }).on('changeDate', function(selected) {      
+      var minDate = new Date(selected.date.valueOf());
+      $('#max').datepicker('setStartDate', minDate);
+    });
+ 
+  // $("#min").datepicker({ onSelect: function () { alert('hi');table.draw(); }, changeMonth: true, changeYear: true });
+  $("#max").datepicker({
+    format: "mm/dd/yyyy",      
+    autoclose: true,
+    startDate: startDate,
+   endDate: endDate      
+    }).on('changeDate', function (selected){
+            var maxDate = new Date(selected.date.valueOf());
+            $('#min').datepicker('setEndDate', maxDate);
+    });
+
+    $("#report_min").datepicker({
+      format: "mm/dd/yyyy",      
+      autoclose: true,      
+    }).on('changeDate', function(selected) {      
+      var minDate = new Date(selected.date.valueOf());
+      $('#report_max').datepicker('setStartDate', minDate);
+    });
+ 
+  // $("#min").datepicker({ onSelect: function () { alert('hi');table.draw(); }, changeMonth: true, changeYear: true });
+  $("#report_max").datepicker({
+    format: "mm/dd/yyyy",      
+    autoclose: true    
+    }).on('changeDate', function (selected){
+            var maxDate = new Date(selected.date.valueOf());
+            $('#report_min').datepicker('setEndDate', maxDate);
+    });
+
+
+    $(document).on('click',"#report_search_filter",function()
+    {      
+      var service_date     = $("#report_min").val();
+      var service_end_date = $("#report_max").val();
+      if(service_date!=''||service_end_date!='')
+      {
+          $.ajax({
+               url: 'report_labour_list/',
+               type: 'POST',
+               data: {'min':$("#report_min").val(),'max':$("#report_max").val()},
+               dataType:"JSON",
+               success: function(response)
+               {
+                  console.log(response);
+                  if(response.data != '')
+                  {
+                    $("#report_result_wrapper").css('display','block');
+                    var rows = view_table.rows().remove().draw();
+                    $.each(response.data, function(key, formarray) {
+                      view_table.row.add([formarray.date,formarray.no_of_temp_labour,formarray.no_of_gdb_labour,formarray.temp_hours,formarray.gdb_hours,formarray.temp_cost,formarray.gdb_cost,formarray.labour_cost,formarray.profit,formarray.loss,formarray.net_pl]).draw(false);
+                    });
+                    view_table.draw();
+                  }
+                  else
+                  {
+                      $("#report_result_wrapper").css('display','block');
+                      var rows = view_table.rows().remove().draw();
+                  }                  
+               }
+             });
+      }
+    });
+
+    
+ 
+
+
+
+              var table = $('#table_report').DataTable( {
+                // var rowData = table.rows( rows ).data();
+                
+                "bPaginate": true,
+                "bJQueryUI": true,  // ThemeRoller-stöd
+                "bLengthChange": false,
+                "bFilter": false,
+                "bSort": false,
+                "bInfo": true,
+                "bAutoWidth": true,
+                "bProcessing": true,
+                "iDisplayLength": 10,
+                // "processing": true,
+                //"lengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+                "pageLength": 5,
+                dom: "Bfrtip",
+                "serverSide": true,
+                "bsearch" : true,
+                // rowId: ''
+                "ajax":{
+                    url :'{% url "ajax_fetch_labour_list" %}', // json datasource
+                    type: "POST",  // type of method  , by default would be get
+                    data: function (d) {
+                        d.min = $('#min').val();
+                        d.max = $('#max').val();
+                      },
+                    error: function(xhr, error, thrown){ 
+
+                    }
+    
+                    
+                    },
+    
+
+
+                // 
+                order: [[ 1, 'asc' ]],
+                buttons:[],
+
+
+    "columns": [
+    { 
+              "bSortable": false,
+              
+              "mRender":function(data,type,full)
+              {
+                return "<input class='delete_check' name='check_id[]' type='checkbox' value='"+full['id']+"'>";
+              } 
+            },
+
+
+        {
+            "data": "date",
+        }, {
+            "data": "no_of_temp_labour",
+        }, {
+            "data": "no_of_gdb_labour",
+        }, {
+            "data": "temp_hours",
+        }, {
+            "data": "gdb_hours",
+        }, {
+            "data": "temp_cost", render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "gdb_cost",render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "labour_cost",render: $.fn.dataTable.render.number( ',', '.', 2,'$' )
+        }, {
+            "data": "profit",
+        }, {
+            "data": "loss",
+        }, {
+            "data": "net_pl",
+        },
+
+    ],
+
+     "fnRowCallback": function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+
+                        $('td:eq(2)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(3)', nRow).css('background-color', '#FEFFCD');
+                        $('td:eq(2)', nRow).addClass('temp_labor');
+                         $('td:eq(3)', nRow).addClass('gdb_labor');
+
+                },
+        // select: {
+        //     style:    'os',
+        //     selector: 'td:first-child'
+        // },
+
+ "drawCallback": function( row, data, index ) {
+    
+        
+},
+      
+    } );
+
+$("#search_filter").on('click',function()
+    {
+      var service_date=$("#min").val();
+      // alert($("#min").val());
+      if(service_date=='')
+      {
+        
+          // $("#leap_error").text("Please enter valid service date");
+        
+      }
+      
+      //saving form state
+      //$("#smart_form").saveForm();
+      table.ajax.reload();
+    });
+
+var lab_arr = []; //Assign array
+
+$('#table_report tbody').on( 'click', '.temp_labor', function () {
+    
+    var rowIdx = table.cell( this ).index().row;
+    var columnIdx = table.cell( this ).index().columnVisible
+    //
+    var dummy_temp_labor_field_value =  $('#temp_labor_field_'+rowIdx+'_0').val();
+
+    var temp_labor_value= $('#temp_labor_'+rowIdx+'_'+columnIdx).val();
+    var temp_labor_id_value= $('#labor_id_'+rowIdx+'_'+columnIdx).val();
+    var temp_labor_field_value= $('#temp_labor_field_'+rowIdx+'_'+columnIdx).val();
+        // alert(temp_labor_field_value);
+     if(typeof temp_labor_value === 'undefined')
+     {
+     //console.log(lab_arr);console.log("=====TEST====");
+     temp_labor_value= lab_arr[0].temp_labor_value_arr;
+      temp_labor_id_value= lab_arr[0].temp_labor_id_value_arr;
+      temp_labor_field_value= lab_arr[0].temp_labor_field_value_arr;
+      // return false;
+     }
+
+      var $this = $(this);
+      if(temp_labor_field_value !== 'undefined') 
+      {
+                  lab_arr = [];                         //Assign array empty then push
+                    lab_arr.push({'temp_labor_value_arr':temp_labor_value,
+                      'temp_labor_id_value_arr':temp_labor_id_value,
+                      'temp_labor_field_value_arr':temp_labor_field_value})
+           
+
+                       var temp_labor_value=temp_labor_value;
+                        var $input = $('<input >', {
+                            value: temp_labor_value,
+                            type: 'text',
+                            style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                            id:'l_temp',
+                            class:'numinput',
+
+                            blur: function() {
+                                  // alert(e);
+                                  temp_labor_new_value=this.value;
+                                 
+                                     $.ajax({
+                                                      type: 'GET',
+                                                      contentType: 'application/json',
+                                                      url: '{% url "edit_labour_list" %}',
+                                                      data:{"id": temp_labor_id_value,
+                                                              "clicked_label": temp_labor_field_value,
+                                                              "clicked_value": temp_labor_new_value
+                                                      },
+                                                      success: function(response) {
+
+                                                           table.ajax.reload();
+                                                      }
+                                                  
+                                              });
+                              
+                            },
+                            keyup: function(e) {
+                             if (e.which === 13) $input.blur();
+
+                            },
+
+                          
+                        //}).appendTo( $this.empty() ).focus();
+                    }).appendTo( $this.empty() ).focus();
+
+      }
+
+  });
+
+var gdb_arr = []; //Assign array
+
+$('#table_report tbody').on( 'click', '.gdb_labor', function () {
+       var rowIdx = table.cell( this ).index().row;
+       var columnIdx = table.cell( this ).index().columnVisible
+
+       var gdb_labor_value= $('#gdb_labor_'+rowIdx+'_'+columnIdx).val();
+       var gdb_labor_id_value= $('#labor_id_'+rowIdx+'_'+columnIdx).val();
+       var gdb_labor_field_value= $('#gdb_labor_field_'+rowIdx+'_'+columnIdx).val();
+       // console.log(gdb_labor_value);
+
+       if(typeof gdb_labor_value === 'undefined')
+       {
+       //console.log(lab_arr);console.log("=====TEST====");
+       gdb_labor_value= gdb_arr[0].gdb_labor_value_arr;
+        gdb_labor_id_value= gdb_arr[0].gdb_labor_id_value_arr;
+        gdb_labor_field_value= gdb_arr[0].gdb_labor_field_value_arr;
+        // return false;
+       }
+
+
+       var $this = $(this);
+       if(gdb_labor_field_value !== "undefined")
+       {
+              gdb_arr = [];                           //Assign array empty then push
+              gdb_arr.push({'gdb_labor_value_arr':gdb_labor_value,
+                'gdb_labor_id_value_arr':gdb_labor_id_value,
+                'gdb_labor_field_value_arr':gdb_labor_field_value})  
+
+                         
+                         var gdb_labor_value=gdb_labor_value;
+                          var $input = $('<input >', {
+                              value: gdb_labor_value,
+                              type: 'text',
+                              style:'outline: none;width: 100%; border-radius: 0 !important; height: 25px; margin: -2.5px;',
+                              blur: function() {
+                                 // $this.text(this.value);
+                                    gdb_labor_new_value=this.value;
+
+                                       $.ajax({
+                                                    type: 'GET',
+                                                    contentType: 'application/json',
+                                                    url: '{% url "edit_labour_list" %}',
+                                                    data:{"id": gdb_labor_id_value,
+                                                            "clicked_label": gdb_labor_field_value,
+                                                            "clicked_value": gdb_labor_new_value
+                                                    },
+                                                    success: function(response) {
+                                                        // console.log(response);
+                                                        table.ajax.reload();
+                                                        // window.location.reload();
+                                                    }
+                             
+                                                });
+                                
+                              },
+                              keyup: function(e) {
+
+                                console.log(e)
+                                if (e.which === 13) $input.blur();
+                              }
+                          }).appendTo( $this.empty() ).focus();
+        }
+
+ });
+
+$("#checkAll").prop("checked",false);
+
+$("#checkAll").change(function () 
+{
+  // alert('hi');
+  $("input:checkbox").prop('checked', $(this).prop("checked"));
+});
+
+$('#delete_record').click(function(){
+  // alert('hi');
+
+     var deleteids_arr = [];
+     // var deleteids_obj = {};
+      // Read all checked checkboxes
+      // var i=0;
+      $("input[name='check_id[]']:checked").each(function () {
+          // var obj_name = 'obj_name_'+i;
+         deleteids_arr.push(parseInt($(this).val()));
+         //deleteids_obj[i]=$(this).val();
+          // i++
+      });
+  
+  
+
+   if(deleteids_arr.length == 0)
+   {
+      // alert("Array empty");
+       message='<div class="alert alert-danger"><a class="close" href="#" data-dismiss="alert">×</a>Please select atleast one project</div>';
+                   // alert(message)
+
+                                $('#del_message').html(message)
+                                setTimeout(function(){
+                                         // $('#example').DataTable().ajax.reload(null,false);
+                                          window.location.reload();
+                                      }, 1500);
+      return false;
+   }
+    var deleteids_arr = JSON.stringify(deleteids_arr);
+
+
+
+      if(deleteids_arr.length > 0){
+        
+         // Confirm alert
+         var confirmdelete = confirm("Are you sure to Delete?");
+         if (confirmdelete == true) {
+            $.ajax({
+               url: '/labour/delete_labour_list/',
+               type: 'POST',
+               data: {deleteids_arr: deleteids_arr},
+
+               success: function(response){
+                  if(response.return_message=="success")
+                  {
+                   message='<div class="alert alert-success"><a class="close" href="#" data-dismiss="alert">×</a>Project deleted successfully</div>';
+                   // alert(message)
+
+                                $('#del_message').html(message)
+                                setTimeout(function(){
+                                         // $('#example').DataTable().ajax.reload(null,false);
+                                          window.location.reload();
+                                      }, 2000);
+                  }
+                if(response.return_message=="fail")
+                  {
+                   message='<div class="alert alert-info"><a class="close" href="#" data-dismiss="alert">×</a>Project not deleted</div>';
+
+                                $('#del_message').html(message)
+                                setTimeout(function(){
+                                         $('#example').DataTable().ajax.reload(null,false);
+                                      }, 2000);
+                  }
+                 
+               }
+            });
+         } 
+      }
+     
+   });
+
+
+         
+    
+
+    });
+
+ 
+</script>
+{% endblock %}
+

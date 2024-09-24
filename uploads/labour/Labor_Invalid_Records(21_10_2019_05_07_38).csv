@@ -1,0 +1,95 @@
+date,no_of_temp,no_of_gdb,temp_hours,gdb_hours,temp_cost,gdb_cost,labor_cost,profit,loss,net_p_l,Reason
+10/07/2019,44,13,306,112,$4437,$1238,$5674.5,$1555.5,$22.1,$1533.4,"temp_cost -> Values must be in decimal -> $4437
+gdb_cost -> Values must be in decimal -> $1238
+"
+10/08/2019,45,13,313.75,111,$4549.375,$1221,$5770.375,$936,$240,$696,"temp_hours -> Values must be in integer round values -> 313.75
+gdb_cost -> Values must be in decimal -> $1221
+profit -> Values must be in decimal -> $936
+loss -> Values must be in decimal -> $240
+net_p_l -> Values must be in decimal -> $696
+"
+10/09/2019,45,14,389,112,$5640.5,$1232,$6872.5,$1717,$70.4,$1646.6,"gdb_cost -> Values must be in decimal -> $1232
+profit -> Values must be in decimal -> $1717
+"
+10/10/2019,44,18,384,137,$5568,$1507,$7075,$857.77,$347.5,$510.27,"temp_cost -> Values must be in decimal -> $5568
+gdb_cost -> Values must be in decimal -> $1507
+labor_cost -> Values must be in decimal -> $7075
+"
+10/11/2019,42,17,318.25,139,$4614.625,$1529,$6143.625,$1440,$37.4,$1402.6,"temp_hours -> Values must be in integer round values -> 318.25
+gdb_cost -> Values must be in decimal -> $1529
+profit -> Values must be in decimal -> $1440
+"
+10/12/2019,47,18,358,144,$5191,$1589.5,$6780.5,$1246.62,$189.74,$1056.88,"temp_cost -> Values must be in decimal -> $5191
+"
+10/13/2019,49,18,376,140,$5452,$1540,$6992,$1169,$229.83,$939.17,"temp_cost -> Values must be in decimal -> $5452
+gdb_cost -> Values must be in decimal -> $1540
+labor_cost -> Values must be in decimal -> $6992
+profit -> Values must be in decimal -> $1169
+"
+10/14/2019,52,18,395,146,$5727.5,$1606,$7333.5,$298.94,$538.56,$-239.62,"gdb_cost -> Values must be in decimal -> $1606
+"
+10/15/2019,48,18,340,144,$4930,$1584,$6514,$713,$561,$152,"temp_cost -> Values must be in decimal -> $4930
+gdb_cost -> Values must be in decimal -> $1584
+labor_cost -> Values must be in decimal -> $6514
+profit -> Values must be in decimal -> $713
+loss -> Values must be in decimal -> $561
+net_p_l -> Values must be in decimal -> $152
+"
+10/16/2019,45,18,335.5,144,$4864.75,$1584,$6448.75,$374,$404,$-30,"temp_hours -> Values must be in integer round values -> 335.5
+gdb_cost -> Values must be in decimal -> $1584
+profit -> Values must be in decimal -> $374
+loss -> Values must be in decimal -> $404
+net_p_l -> Values must be in decimal -> $-30
+"
+10/17/2019,54,18,424,147,$6148,$1617,$7765,$217.8,$338.8,$-121,"temp_cost -> Values must be in decimal -> $6148
+gdb_cost -> Values must be in decimal -> $1617
+labor_cost -> Values must be in decimal -> $7765
+net_p_l -> Values must be in decimal -> $-121
+"
+10/18/2019,45,18,333.5,145,$4835.75,$1595,$6430.75,$1972.5,$348.6,$1623.9,"temp_hours -> Values must be in integer round values -> 333.5
+gdb_cost -> Values must be in decimal -> $1595
+"
+10/19/2019,56,19,391.5,140,$5676.75,$1545.5,$7222.25,$369.6,$28,$341.6,"temp_hours -> Values must be in integer round values -> 391.5
+loss -> Values must be in decimal -> $28
+"
+10/20/2019,61,19,460,142,$6670,$1562,$8232,$2018,$29.09,$1988.91,"temp_cost -> Values must be in decimal -> $6670
+gdb_cost -> Values must be in decimal -> $1562
+labor_cost -> Values must be in decimal -> $8232
+profit -> Values must be in decimal -> $2018
+"
+10/21/2019,56,18,428,147,$6206,$1617,$7823,$1490.14,$477.3,$1012.84,"temp_cost -> Values must be in decimal -> $6206
+gdb_cost -> Values must be in decimal -> $1617
+labor_cost -> Values must be in decimal -> $7823
+"
+10/22/2019,50,19,379,156,$5495.5,$1716,$7211.5,$509.94,$455.24,$54.7,"gdb_cost -> Values must be in decimal -> $1716
+"
+10/23/2019,56,20,370.5,168,$5372.25,$1848,$7220.25,$1686.8,$249.6,$1437.2,"temp_hours -> Values must be in integer round values -> 370.5
+gdb_cost -> Values must be in decimal -> $1848
+"
+10/24/2019,56,18,384,150,$5568,$1650,$7218,$1573,$156.62,$1416.38,"temp_cost -> Values must be in decimal -> $5568
+gdb_cost -> Values must be in decimal -> $1650
+labor_cost -> Values must be in decimal -> $7218
+profit -> Values must be in decimal -> $1573
+"
+10/25/2019,48,17,390,137,$5655,$1512.5,$7167.5,$1102.44,$433,$669.44,"temp_cost -> Values must be in decimal -> $5655
+loss -> Values must be in decimal -> $433
+"
+10/26/2019,55,18,420,141,$6090,$1556.5,$7646.5,$1707.45,$609,$1098.45,"temp_cost -> Values must be in decimal -> $6090
+loss -> Values must be in decimal -> $609
+"
+10/27/2019,49,18,386.5,140,$5604.25,$1540,$7144.25,$1974,$156.3,$1817.7,"temp_hours -> Values must be in integer round values -> 386.5
+gdb_cost -> Values must be in decimal -> $1540
+profit -> Values must be in decimal -> $1974
+"
+10/28/2019,49,17,376,124,$5452,$1364,$6816,$1050,$640,$410,"temp_cost -> Values must be in decimal -> $5452
+gdb_cost -> Values must be in decimal -> $1364
+labor_cost -> Values must be in decimal -> $6816
+profit -> Values must be in decimal -> $1050
+loss -> Values must be in decimal -> $640
+net_p_l -> Values must be in decimal -> $410
+"
+10/29/2019,52,17,410,136,$5945,$1496,$7441,$1192.6,$113,$1079.6,"temp_cost -> Values must be in decimal -> $5945
+gdb_cost -> Values must be in decimal -> $1496
+labor_cost -> Values must be in decimal -> $7441
+loss -> Values must be in decimal -> $113
+"

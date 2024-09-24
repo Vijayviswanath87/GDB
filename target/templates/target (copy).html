@@ -1,0 +1,189 @@
+{% extends 'gdb_header.html' %}
+    {% load static %}
+
+{% block body%}
+
+
+    <!-- <div class="login-box">
+        <div class="logo"> -->
+        <div>
+            <a href="target.html">Target Form</b></a>
+            <!-- <small>Admin BootStrap Based - Material Design</small> -->
+        </div>
+        <div class="card">
+            <div class="body">
+                <form id="" method="post" action="{% url 'target' %}", style='margin-top :65px'>
+                    {% csrf_token %}
+                    <!-- <div class="msg">Log in to start your session</div> -->
+                    {% if field.error %}
+                        <div class="msg">{{ error }}</div>
+                    {% endif %}
+                    
+                    <div>
+                        <head>
+
+
+</head>
+
+                        <select  id="master_project_list" class="master_project_list form-control" name="target_projectname[]"><option value="">Select</option>
+                                        <!-- {% for i in option %}
+                                        <option value="{{i}}">{{i}}</option>
+                                        {% endfor %} -->
+                         </select>
+                        <div >Project Name :</br></br>
+                         </br></br>
+
+                            <input type="text" class="form-control" id="target_projectname" name="target_projectname" placeholder="projectname" />
+
+
+
+                        </div></br></br>
+                        <div >Average cost/unit : </br></br>
+                            <input type="value" id="target_cpu" class="form-control" name="target_cpu" placeholder="Average cost/unit" />
+
+                        </div></br></br>
+                        <div > Average cost/gallon : </br></br>
+                            <input type="value" id="target_cpg" class="form-control" name="target_cpg" placeholder="Average cost/gallon"/ >
+                        </div></br></br>
+                   
+                    
+                        <div class="col-xs-4" >
+                            <button class="btn btn-block bg-blue waves-effect" type="submit">submit</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+   <!-- <body>
+    <select id="e1">
+        <option value="AL">Alabama</option>
+        ...
+        <option value="WY">Wyoming</option>
+    </select>
+</body>
+ -->
+   {% include "gdb_footer.html" %}
+
+
+{% endblock %}
+
+<!-- <script type="text/javascript">
+    $("#master_project_list").autocomplete({
+source: "/target_form/",
+minLength: 2,
+select: function (event, ui) {
+$('.ui-autocomplete').css('z-index', 99);
+
+$("#master_project_list").val(ui.item.value);
+/*$("#srchFldHidden").val(ui.item.id);*/ // display the selected text
+}
+</script> -->
+    <!-- <script>
+        $(document).ready(function() { $("#e1").select2(); });
+    </script> -->
+<!-- <script type="text/javascript">
+    $(function() {
+
+  // settings for each autocomplete
+  var autocompleteOptions = {
+    minLength: 3,
+    source: function(request, response) {
+      $.ajax({
+        type: "GET",
+        url: "master_project_list",
+        data: { name: request.term },
+        success: function(data) {
+          response(data);
+        }
+      });
+    }
+  };
+
+
+  // dynamically create an input and initialize autocomplete on it
+  function addInput() {
+    var $input = $("<input>", {
+      name: "search",
+      "class": "searchInput",
+      maxlength: "20"
+    });
+    $input
+      .appendTo("form#myForm")
+      .focus()
+      .autocomplete(autocompleteOptions);
+  };
+
+  // initialize autocomplete on first input
+  $("input.searchInput").autocomplete(autocompleteOptions);
+  $("input#addButton").click(addInput);
+});
+    
+
+    /*$(document).ready(function(){
+        $('.master_project_list').select2({
+
+placeholder: 'Click to view brokers',
+// dropdownParent: $('.container-fluid'),
+ajax: {
+
+url: "master_project_list",
+
+dataType: 'json',
+
+delay: 250,
+
+processResults: function (data) {
+
+// $("#create_broker").show();
+
+return {
+
+results: data
+
+};
+
+},
+
+cache: true
+
+}
+
+});
+
+});*/
+</script> -->
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('.master_project_list').select2({
+
+placeholder: 'Click to view brokers',
+// dropdownParent: $('.container-fluid'),
+ajax: {
+
+url: "master_project_list",
+
+dataType: 'json',
+
+delay: 250,
+
+processResults: function (data) {
+
+// $("#create_broker").show();
+
+return {
+
+results: data
+
+};
+
+},
+
+cache: true
+
+}
+
+});
+        });
+</script>

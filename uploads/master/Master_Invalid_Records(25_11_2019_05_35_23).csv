@@ -1,0 +1,107 @@
+date,week,month,project group,project_name,shift,q#,customer,whse #,supervisor_name,work_type,product_category,size,temp_labor_hrs,gdb labor hrs,temp_labor_cost,gdb_labor_cost,total_labor_cost,units_g1,units_g5,units_q,units_p,units_other,total_units,total_gallons_done,cost_gallon,cost_unit,description_comments,chris lampe comment/notes,laurie's/intern's comments,Reason
+10/11/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,64,28,928,$308.00 ," $1,236.00 ",,,,,,1434,2202,$0.56 ,$0.86 ,,,,"temp_labor_cost -> Values must be in decimal -> 928
+"
+10/14/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,32,696,$352.00 ," $1,048.00 ",,,,,,576,1728,$0.61 ,$1.82 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+10/14/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580.00 ,,,,,,306,498,$1.16 ,$1.90 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/15/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,64,464,$704.00 ," $1,168.00 ",,,,,,1470,1470,$0.79 ,$0.79 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+10/15/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580.00 ,,,,,,888,984,$0.59 ,$0.65 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/16/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,26,32,377,$352.00 ,$729.00 ,,,,,,1050,1050,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 377
+"
+10/16/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,18,0,261,,$261.00 ,,,,,,630,630,$0.41 ,$0.41 ,,,,"temp_labor_cost -> Values must be in decimal -> 261
+"
+10/17/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,32,696,$352.00 ," $1,048.00 ",,,,,,1890,1890,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+10/17/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,0,812,,$812.00 ,,,,,,1470,1470,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+"
+10/18/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,16,348,$176.00 ,$524.00 ,,,,,,1098,1194,$0.44 ,$0.48 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+"
+10/18/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,8,0,109,,$109.00 ,,,,,,258,354,$0.31 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 109
+"
+10/21/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176.00 ,$756.00 ,,,,,,450,930,$0.81 ,$1.68 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/21/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,0,232,,$232.00 ,,,,,,240,720,$0.32 ,$0.97 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+"
+10/22/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,16,696,$176.00 ,$872.00 ,,,,,,1050,1050,$0.83 ,$0.83 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+10/22/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,0,232,,$232.00 ,,,,,,630,630,$0.37 ,$0.37 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+"
+10/23/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,16,812,$176.00 ,$988.00 ,,,,,,1680,1680,$0.59 ,$0.59 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+"
+10/23/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,0,348,,$348.00 ,,,,,,630,630,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+"
+10/24/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176.00 ,$756.00 ,,,,,,1470,1470,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/24/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,29,0,421,,$421.00 ,,,,,,630,630,$0.67 ,$0.67 ,,,,"temp_labor_cost -> Values must be in decimal -> 421
+"
+10/25/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,24,348,$264.00 ,$612.00 ,,,,,,1470,1470,$0.42 ,$0.42 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+"
+10/25/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,18,0,261,,$261.00 ,,,,,,420,420,$0.62 ,$0.62 ,,,,"temp_labor_cost -> Values must be in decimal -> 261
+"
+10/28/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,16,580,$176.00 ,$756.00 ,,,,,,1890,1890,$0.40 ,$0.40 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/28/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580.00 ,,,,,,840,840,$0.69 ,$0.69 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/29/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,2100,2100,$0.30 ,$0.30 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+10/29/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580.00 ,,,,,,1260,1260,$0.46 ,$0.46 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+10/30/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1272,2136,$0.30 ,$0.50 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+10/30/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,27,0,392,,$392.00 ,,,,,,384,1152,$0.34 ,$1.02 ,,,,"temp_labor_cost -> Values must be in decimal -> 392
+"
+10/31/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,774,1062,$0.60 ,$0.83 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+10/31/2019,week3,OCT,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,29,0,421,,$421.00 ,,,,,,630,630,$0.67 ,$0.67 ,,,,"temp_labor_cost -> Values must be in decimal -> 421
+"
+11/1/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,13,16,189,$176.00 ,$365.00 ,,,,,,1260,1260,$0.29 ,$0.29 ,,,,"temp_labor_cost -> Values must be in decimal -> 189
+"
+11/1/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,0,0,0,,,,,,,,0,0,,,,,,"temp_labor_cost -> Values must be in decimal -> 0
+"
+11/4/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1050,1050,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/4/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464.00 ,,,,,,1050,1050,$0.44 ,$0.44 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/5/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,2100,2100,$0.30 ,$0.30 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/5/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,56,0,812,,$812.00 ,,,,,,1680,1680,$0.48 ,$0.48 ,,,,"temp_labor_cost -> Values must be in decimal -> 812
+"
+11/6/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1890,1890,$0.34 ,$0.34 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/6/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,40,0,580,,$580.00 ,,,,,,1260,1260,$0.46 ,$0.46 ,,,,"temp_labor_cost -> Values must be in decimal -> 580
+"
+11/7/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1050,1050,$0.61 ,$0.61 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/7/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,45,0,653,,$653.00 ,,,,,,1260,1260,$0.52 ,$0.52 ,,,,"temp_labor_cost -> Values must be in decimal -> 653
+"
+11/8/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1080,1560,$0.41 ,$0.59 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/8/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696.00 ,,,,,,576,1728,$0.40 ,$1.21 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+11/11/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,984,1272,$0.50 ,$0.65 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/11/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464.00 ,,,,,,630,630,$0.74 ,$0.74 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/12/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,16,16,232,$176.00 ,$408.00 ,,,,,,840,840,$0.49 ,$0.49 ,,,,"temp_labor_cost -> Values must be in decimal -> 232
+"
+11/12/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,58,0,841,,$841.00 ,,,,,,1470,1470,$0.57 ,$0.57 ,,,,"temp_labor_cost -> Values must be in decimal -> 841
+"
+11/13/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,1260,1260,$0.51 ,$0.51 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/13/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696.00 ,,,,,,210,210,$3.31 ,$3.31 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+11/14/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,8,464,$88.00 ,$552.00 ,,,,,,1050,1050,$0.53 ,$0.53 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/14/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,48,0,696,,$696.00 ,,,,,,1470,1470,$0.47 ,$0.47 ,,,,"temp_labor_cost -> Values must be in decimal -> 696
+"
+11/15/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,24,16,348,$176.00 ,$524.00 ,,,,,,1680,1680,$0.31 ,$0.31 ,,,,"temp_labor_cost -> Values must be in decimal -> 348
+"
+11/15/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,0,464,,$464.00 ,,,,,,840,840,$0.55 ,$0.55 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/18/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,16,464,$176.00 ,$640.00 ,,,,,,720,2160,$0.30 ,$0.89 ,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"
+11/19/2019,week3,NOV,Outbound Project,STAIN TINTING,MORNING,,OLLIE's,19,CHANDRAKANT,TINTING,SOLID STAIN,G1,32,8,464,$88.00 ,$552.00 ,,,,,,,,,,,,,"temp_labor_cost -> Values must be in decimal -> 464
+"

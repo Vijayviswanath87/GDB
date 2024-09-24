@@ -1,0 +1,11 @@
+date,no_of_temp,no_of_gdb,temp_hours,gdb_hours,temp_cost,gdb_cost,labor_cost,profit,loss,net_p_l,Reason
+10/2/2019,31,20,248,160,"$3,596.00 ","$1,760.00 ","$5,356.00 ",$647.00 ,$18.00 ,629,"net_p_l -> Values must be in decimal -> 629
+"
+10/4/2019,31,20,248,160,"$3,596.00 ","$1,760.00 ","$5,356.00 ",($112.60),$257.91 ,($145.31),"profit -> Values must be in decimal -> ($112.60)
+net_p_l -> Values must be in decimal -> ($145.31)
+"
+10/5/2019,33,20,264,160,"$3,828.00 ","$1,760.00 ","$5,588.00 ",($367.05),$244.45 ,$122.60 ,"profit -> Values must be in decimal -> ($367.05)
+"
+10/6/2019,35,20,280,160,"$4,060.00 ","$1,760.00 ","$5,820.00 ",($109.46),$488.61 ,($379.15),"profit -> Values must be in decimal -> ($109.46)
+net_p_l -> Values must be in decimal -> ($379.15)
+"

@@ -1,0 +1,236 @@
+
+<!-- #Customly added links -->
+   <!--  <link href="jquery.fulltable.css" rel="stylesheet"/> -->
+    <!-- #Customly added links -->
+    <!-- <link href="style.css" rel="stylesheet"/> -->
+
+{% load static %}
+<style type="text/css">
+  .error
+  {
+    display: none;
+    color:red;
+  }
+  ul.ui-autocomplete {
+    z-index: 1100;
+}
+</style>
+
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <style>
+  .ui-autocomplete-loading {
+    background: white url("images/ui-anim_basic_16x16.gif") right center no-repeat;
+  }
+  $( ".target_projectname" ).autocomplete( "option", "appendTo", ".eventInsForm" );
+  </style>
+  <div class="table-responsive">
+
+<form id="target_form" method="post"  style='margin-top :65px'>
+
+  <table id= "units_detail" class="table datatable custom-table table-bordered table-hover select-all "  > 
+    <tr>
+      <td> <label for="target_projectname">Project Name: </label></td>
+      <td>
+         <input id="target_projectname"  name="target_projectname" class="target_projectname">
+          <span id="target_projectname_error"  class="error"></span>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="size">Sizes:</label></td>
+      <td >
+        <input type="radio" id="size" class="add_target_pop_radio"  value ="units" name="size"> Units
+        <input type="radio" id="size" class="add_target_pop_radio" name="size" value="gallons" > Gallons </td>
+  <span id="size_error" class="error"></span></td>
+
+    </tr>
+    <tr>
+      <td> <label for="cpu">Average cost/unit:</label></td>
+      <td><input type="value" id="target_cpu" class="form-control numinput" name="target_cpu" placeholder="Average cost/unit" />
+        <span id="target_cpu_error"  class="error"></span></td>
+      </tr>
+      <tr>
+        <td><label for="cpg">Average cost/gallon:</label></td>
+        <td><input type="value" id="target_cpg" class="form-control numinput" name="target_cpg" placeholder="Average cost/gallon" />
+          <span id="target_cpg_error"  class="error"></span></td>
+        </tr>
+
+  </table>
+  <div class="modal-footer">
+  <input type="button" id="form_submit" class="btn btn-default" style ='background-color:#2196F3 !important;color:#ffffff' value="Add Project">
+  <button type="button" class="btn btn-default" id="target" data-dismiss="modal">Close</button>
+</div>
+
+</form>
+
+
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /> -->
+
+<script type="text/javascript">
+
+$('body').on('input', '.numinput', function() {
+this.value = this.value.replace(/(?!^-)[^0-9.]/g, "").replace(/(\..*)\./g, '$1');
+});
+
+$('body').on('change', '.numinput', function() {
+if(this.value == '-' || this.value == '-.' || this.value == '.'){
+this.value = '';
+}
+});
+
+$(document).ready(function(){
+
+
+$("#form_submit").click(function(){
+var target_projectname = $.trim($('#target_projectname').val());
+
+/*var groups_count = $('input[name="groups[]"]:checked').length;*/
+
+var target_cpu = $.trim($('#target_cpu').val());
+
+var target_cpg = $.trim($('#target_cpg').val());
+var size = $('#size:checked').length;
+
+/*var activate_template = ($('input[name="activate_template"]').length > 0) ? $('input[name="activate_template"]:checked').val() : 'yes';*/
+
+$('.error').html('');
+
+$('.error').hide();
+
+var validation_flag = 1;
+
+if(target_projectname == '')
+{
+$('#target_projectname_error').html('Required');
+
+validation_flag = 2;
+}
+else
+{
+  if(check_project_name_exists(target_projectname) == "false")
+  {
+      $('#target_projectname_error').html('Project name already exists. Please try different one');
+      validation_flag=2;
+  }
+  
+}
+
+if(target_cpu == '')
+{
+  $('#target_cpu_error').html('Required');
+   validation_flag = 2;
+}
+if(target_cpg == '')
+{
+  $('#target_cpg_error').html('Required');
+   validation_flag = 2;
+}
+if(size == 0)
+{
+  $('#size_error').html('Required');
+  validation_flag = 2;
+}
+
+if(validation_flag==2)
+{
+  $('.error').show();
+  return false;
+}
+else
+{
+
+  $.ajax({ 
+    "type" : "POST",  
+    "url" : '{% url "target_form" %}',
+    type : 'POST',
+    async:false,
+    "data" : {'target_projectname':target_projectname,'size':$('#size:checked').val(),'target_cpu':target_cpu,'target_cpg':target_cpg},
+    success: function(data, textStatus, jqXHR)
+    { 
+
+      window.location.href = ''; 
+    //return data;
+      }
+    }); 
+}
+
+
+ });
+});
+function check_project_name_exists(project_name)
+{
+
+
+    $.ajax({ 
+    "type" : "POST",  
+    "url" : "check_project_name_exists",
+    dataType: 'json',
+    async:false,
+    "data" : {'project_name':project_name},
+    success: function(data, textStatus, jqXHR)
+    { 
+
+      response=data.message;  
+      //return data;
+      }
+    }); 
+
+    return response;
+}
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+
+
+    $( "#target_projectname" ).autocomplete({
+      source: function( request, response ) {
+        $.ajax({
+          url: "project_name_autocomplete",
+          dataType: "json",
+          data: {
+            term: request.term
+          },
+
+          success: function (data) {
+           // alert(data)
+        response($.map(data, function (item) {
+           
+            return {
+
+                label: item.label,
+                value: item.label
+            };
+            
+        }));
+    }
+
+        });
+      },
+      minLength: 3,
+      select: function( event, ui ) {
+        console.log( ui.item ?
+          "Selected: " + ui.item.label :
+          "Nothing selected, input was " + this.value);
+
+        $(this).val(ui.item.label);
+      },
+      open: function() {
+        $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+      },
+      close: function() {
+        $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+      }
+    });
+
+  });
+
+  </script>
